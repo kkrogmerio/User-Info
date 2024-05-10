@@ -5,4 +5,5 @@ export default {
   nextUser: 'Next user',
   usersList: 'My list of users',
   username: 'Username: ',
+  noUsers: 'No available users'
 };

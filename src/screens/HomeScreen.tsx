@@ -27,18 +27,25 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = ({navigation}) => {
         <Text>{Strings.errorFetching}</Text>
       </View>
     );
+  // assuming there're no users coming from the api
+  if (data && data.length > 0)
+    return (
+      <View style={styles.screenView}>
+        <Text style={styles.title}>{Strings.usersList}</Text>
+        <FlatList
+          data={data}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({item}) => (
+            <UserItem user={item} users={data} navigation={navigation} />
+          )}
+          contentContainerStyle={{paddingBottom: 100}}
+          numColumns={2}
+        />
+      </View>
+    );
   return (
-    <View style={styles.screenView}>
-      <Text style={styles.title}>{Strings.usersList}</Text>
-      <FlatList
-        data={data}
-        keyExtractor={item => item.id.toString()}
-        renderItem={({item}) => (
-          <UserItem user={item} users={data} navigation={navigation} />
-        )}
-        contentContainerStyle={{paddingBottom: 100}}
-        numColumns={2}
-      />
+    <View style={styles.loadingOrErrorView}>
+      <Text>{Strings.noUsers}</Text>
     </View>
   );
 };
