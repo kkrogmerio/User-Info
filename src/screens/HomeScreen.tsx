@@ -15,8 +15,18 @@ type HomeScreenNavigationProp = NativeStackScreenProps<
 const HomeScreen: React.FC<HomeScreenNavigationProp> = ({navigation}) => {
   const {data, isLoading, error} = useUsersQuery();
 
-  if (isLoading) return <Text>{Strings.loading}</Text>;
-  if (error) return <Text>{Strings.errorFetching}</Text>;
+  if (isLoading)
+    return (
+      <View style={styles.loadingOrErrorView}>
+        <Text>{Strings.loading}</Text>
+      </View>
+    );
+  if (error)
+    return (
+      <View style={styles.loadingOrErrorView}>
+        <Text>{Strings.errorFetching}</Text>
+      </View>
+    );
   return (
     <View style={styles.screenView}>
       <Text style={styles.title}>{Strings.usersList}</Text>
@@ -33,6 +43,7 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = ({navigation}) => {
   );
 };
 const styles = StyleSheet.create({
+  loadingOrErrorView: {flex: 1, justifyContent: 'center', alignItems: 'center'},
   screenView: {flex: 1, width: '100%', height: '100%', marginTop: 60},
   title: {
     textAlign: 'center',
