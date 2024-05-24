@@ -1,11 +1,13 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {render, fireEvent} from '@testing-library/react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import UserDetailsScreen from '../../screens/UserDetailsScreen';
 import Strings from '../../constants/strings';
-import { Alert } from 'react-native';
-const Stack = createNativeStackNavigator();
+import {Alert} from 'react-native';
+import {RootStackParamList} from '../../types/rootStack';
+import SCREENS from '../../navigation/screenNames';
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 describe('UserDetailsScreen', () => {
   it('displays user details', () => {
@@ -24,16 +26,16 @@ describe('UserDetailsScreen', () => {
       },
     ];
 
-    const { getByText } = render(
+    const {getByText} = render(
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="UserDetails"
+            name={SCREENS.UserDetails}
             component={UserDetailsScreen}
-            initialParams={{ user: users[0], users }}
+            initialParams={{user: users[0], users}}
           />
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer>,
     );
 
     expect(getByText(Strings.username + ' johndoe')).toBeTruthy();
@@ -54,16 +56,16 @@ describe('UserDetailsScreen', () => {
     ];
     Alert.alert = jest.fn();
 
-    const { getByText } = render(
+    const {getByText} = render(
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="UserDetails"
+            name={SCREENS.UserDetails}
             component={UserDetailsScreen}
-            initialParams={{ user: users[0], users }}
+            initialParams={{user: users[0], users}}
           />
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer>,
     );
     fireEvent.press(getByText(Strings.nextUser));
     expect(Alert.alert).toHaveBeenCalledWith(Strings.errorNoMoreUsers);
