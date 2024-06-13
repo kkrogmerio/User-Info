@@ -41,7 +41,7 @@ describe('HomeScreen', () => {
   });
 
   it('renders users correctly', async () => {
-    const users = [{id: 1, name: 'John Doe'}];
+    const users = [{id: 1, name: 'John Doe'},{id: 2, name: 'Maria Wong'}];
     require('@tanstack/react-query').useQuery.mockImplementation(() => ({
       isLoading: false,
       data: users,
@@ -56,6 +56,7 @@ describe('HomeScreen', () => {
 
     await waitFor(() => {
       expect(getByText('John Doe')).toBeTruthy();
+      expect(getByText('Maria Wong')).toBeTruthy();
     });
   });
   it('shows a message when there are no users', async () => {
