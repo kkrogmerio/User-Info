@@ -1,10 +1,10 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
-import UserItem from '../../components/UserItem'; // Adjust the import path as necessary
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../types/rootStack';
-import SCREENS from '../../navigation/screenNames';
-import { User } from '../../types/user';
+import {render, fireEvent} from '@testing-library/react-native';
+import UserItem from './UserItem';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../../../types/rootStack';
+import SCREENS from '../../../../navigation/screenNames';
+import {User} from '../../../../types/user';
 
 describe('UserItem', () => {
   const mockNavigation = {
@@ -28,8 +28,8 @@ describe('UserItem', () => {
   const users: User[] = [user, otherUser];
 
   it('shows only the user details and not others', () => {
-    const { getByText, queryByText } = render(
-      <UserItem user={user} users={users} navigation={mockNavigation} />
+    const {getByText, queryByText} = render(
+      <UserItem currentUser={user} users={users} />,
     );
 
     // Check if user details are shown
@@ -44,12 +44,13 @@ describe('UserItem', () => {
   });
 
   it('navigates to UserDetails screen with correct parameters when pressed', () => {
-    const { getByText } = render(
-      <UserItem user={user} users={users} navigation={mockNavigation} />
-    );
+    const {getByText} = render(<UserItem currentUser={user} users={users} />);
 
     fireEvent.press(getByText('John Doe'));
 
-    expect(mockNavigation.navigate).toHaveBeenCalledWith(SCREENS.UserDetails, { user, users });
+    expect(mockNavigation.navigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
+      user,
+      users,
+    });
   });
 });
