@@ -1,73 +1,67 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import UserDetailsScreen from './UserDetailsScreen';
-import { Strings } from '../../../constants';
-import {Alert} from 'react-native';
+import {TEST_IDS} from '../../../constants/testIds';
+import {Strings} from '../../../constants';
+import {mockProps, mockUsers} from '../../../test-utils/mockHelpers';
 import {RootStackParamList} from '../../../types/rootStack';
+import {RouteProp} from '@react-navigation/native';
 import SCREENS from '../../../navigation/screenNames';
-const Stack = createNativeStackNavigator<RootStackParamList>();
+
+// Mock navigation route params
+const mockUser = {id: 1, name: 'Alice', username: 'alice', phone: '123'};
+
+const mockHandleNextUserPress = jest.fn();
+
+// Mock the custom hook
+jest.mock('../../../hooks/useUserDetailsNavigation', () =>
+  jest.fn(() => ({
+    handleNextUserPress: mockHandleNextUserPress,
+  })),
+);
+
+const mockRoute = {
+  params: {
+    user: mockUser,
+    users: mockUsers,
+  },
+} as RouteProp<RootStackParamList, SCREENS.UserDetails>;
 
 describe('UserDetailsScreen', () => {
-  it('displays user details', () => {
-    const users = [
-      {
-        id: 1,
-        name: 'John Doe',
-        username: 'johndoe',
-        phone: '1234567890',
-      },
-      {
-        id: 2,
-        name: 'Jane Smith',
-        username: 'janesmith',
-        phone: '0987654321',
-      },
-    ];
-
-    const {getByText} = render(
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name={SCREENS.UserDetails}
-            component={UserDetailsScreen}
-            initialParams={{user: users[0], users}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>,
-    );
-
-    expect(getByText(Strings.username + ' johndoe')).toBeTruthy();
-
-    fireEvent.press(getByText(Strings.nextUser));
-
-    expect(getByText(Strings.username + ' janesmith')).toBeTruthy();
+  beforeEach(() => {
+    jest.clearAllMocks();
   });
 
-  it('displays alert when there are no more users', () => {
-    const users = [
-      {
-        id: 1,
-        name: 'John Doe',
-        username: 'johndoe',
-        phone: '1234567890',
-      },
-    ];
-    Alert.alert = jest.fn();
-
-    const {getByText} = render(
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name={SCREENS.UserDetails}
-            component={UserDetailsScreen}
-            initialParams={{user: users[0], users}}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>,
+  it('should render the container view with correct testID', () => {
+    const {getByTestId} = render(
+      <UserDetailsScreen {...mockProps} route={mockRoute} />,
     );
-    fireEvent.press(getByText(Strings.nextUser));
-    expect(Alert.alert).toHaveBeenCalledWith(Strings.errorNoMoreUsers);
+    expect(getByTestId(TEST_IDS.USER_DETAILS_SCREEN.CONTAINER)).toBeTruthy();
+  });
+
+  it('should render the username text with correct value and testID', () => {
+    const {getByTestId} = render(
+      <UserDetailsScreen {...mockProps} route={mockRoute} />,
+    );
+    const usernameText = getByTestId(TEST_IDS.USER_DETAILS_SCREEN.USERNAME);
+    expect(usernameText.props.children).toContain(Strings.username);
+    expect(usernameText.props.children).toContain(mockUser.username);
+  });
+
+  it('should render the "next user" button with correct text and testID', () => {
+    const {getByTestId} = render(
+      <UserDetailsScreen {...mockProps} route={mockRoute} />,
+    );
+    const buttonText = getByTestId(TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_TEXT);
+    expect(buttonText.props.children).toBe(Strings.nextUser);
+  });
+
+  it('should call handleNextUserPress when next user button is pressed', () => {
+    const {getByTestId} = render(
+      <UserDetailsScreen {...mockProps} route={mockRoute} />,
+    );
+    const button = getByTestId(TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_BUTTON);
+    fireEvent.press(button);
+    expect(mockHandleNextUserPress).toHaveBeenCalled();
   });
 });

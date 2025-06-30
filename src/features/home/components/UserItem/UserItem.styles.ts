@@ -2,7 +2,6 @@ import {Colors} from '../../../../constants';
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-  contentLayout: {width: '100%', alignItems: 'center'},
   card: {
     backgroundColor: '#ffffff',
     borderRadius: 12,
@@ -26,6 +25,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 8,
     color: Colors.secondaryTextColor,
+    textAlign: 'center',
   },
   username: {
     fontSize: 14,

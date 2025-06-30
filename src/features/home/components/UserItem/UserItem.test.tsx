@@ -1,56 +1,113 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
-import UserItem from './UserItem';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../../types/rootStack';
-import SCREENS from '../../../../navigation/screenNames';
+import {UserItem} from './';
 import {User} from '../../../../types/user';
+import {TEST_IDS} from '../../../../constants/testIds';
+import { mockUsers } from '../../../../test-utils/mockHelpers';
 
-describe('UserItem', () => {
-  const mockNavigation = {
-    navigate: jest.fn(),
-  } as unknown as NativeStackNavigationProp<RootStackParamList, SCREENS.Home>;
+// Mock the custom hook
+jest.mock('../../../../hooks/useUserDetailsNavigation', () => ({
+  __esModule: true,
+  default: jest.fn(),
+}));
 
-  const user: User = {
+const useUserDetailsNavigationMock =
+  require('../../../../hooks/useUserDetailsNavigation').default as jest.Mock;
+
+describe('UserItem Component', () => {
+  const mockHandleNextUserPress = jest.fn();
+
+  const mockCurrentUser: User = {
     id: 1,
     name: 'John Doe',
     username: 'johndoe',
-    phone: '123-456-7890',
+    phone: '+1234567890',
   };
 
-  const otherUser: User = {
-    id: 2,
-    name: 'Jane Doe',
-    username: 'janedoe',
-    phone: '987-654-3210',
-  };
-
-  const users: User[] = [user, otherUser];
-
-  it('shows only the user details and not others', () => {
-    const {getByText, queryByText} = render(
-      <UserItem currentUser={user} users={users} />,
-    );
-
-    // Check if user details are shown
-    expect(getByText('John Doe')).toBeTruthy();
-    expect(getByText('johndoe')).toBeTruthy();
-    expect(getByText('123-456-7890')).toBeTruthy();
-
-    // Check if other user details are not shown
-    expect(queryByText('Jane Doe')).toBeNull();
-    expect(queryByText('janedoe')).toBeNull();
-    expect(queryByText('987-654-3210')).toBeNull();
+  beforeEach(() => {
+    jest.clearAllMocks();
+    useUserDetailsNavigationMock.mockReturnValue({
+      handleNextUserPress: mockHandleNextUserPress,
+    });
   });
 
-  it('navigates to UserDetails screen with correct parameters when pressed', () => {
-    const {getByText} = render(<UserItem currentUser={user} users={users} />);
+  describe('Rendering', () => {
+    it('should render all user information correctly', () => {
+      const {getByText, getByTestId} = render(
+        <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
+      );
 
-    fireEvent.press(getByText('John Doe'));
+      // Verify main container exists
+      expect(getByTestId(TEST_IDS.USER_ITEM.CARD)).toBeTruthy();
+      expect(getByTestId(TEST_IDS.USER_ITEM.CONTENT)).toBeTruthy();
 
-    expect(mockNavigation.navigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
-      user,
-      users,
+      // Verify user data is displayed
+      expect(getByText(mockCurrentUser.name)).toBeTruthy();
+      expect(getByText(mockCurrentUser.username)).toBeTruthy();
+      expect(getByText(mockCurrentUser.phone)).toBeTruthy();
+
+      // Verify testIDs are applied correctly
+      expect(getByTestId(TEST_IDS.USER_ITEM.NAME)).toBeTruthy();
+      expect(getByTestId(TEST_IDS.USER_ITEM.USERNAME)).toBeTruthy();
+      expect(getByTestId(TEST_IDS.USER_ITEM.PHONE)).toBeTruthy();
+    });
+
+    it('should render with special characters in user data', () => {
+      const userWithSpecialChars: User = {
+        ...mockCurrentUser,
+        name: "José María O'Connor",
+        username: 'josé_maría123',
+        phone: '+34-123-456-789',
+      };
+
+      const {getByText} = render(
+        <UserItem currentUser={userWithSpecialChars} users={mockUsers} />,
+      );
+
+      expect(getByText("José María O'Connor")).toBeTruthy();
+      expect(getByText('josé_maría123')).toBeTruthy();
+      expect(getByText('+34-123-456-789')).toBeTruthy();
+    });
+  });
+
+  describe('User Interaction', () => {
+    it('should call handleNextUserPress when card is pressed', () => {
+      const {getByTestId} = render(
+        <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
+      );
+
+      const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
+      fireEvent.press(card);
+
+      expect(mockHandleNextUserPress).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('Hook Integration', () => {
+    it('should pass correct parameters to useUserDetailsNavigation hook', () => {
+      render(<UserItem currentUser={mockCurrentUser} users={mockUsers} />);
+
+      expect(useUserDetailsNavigationMock).toHaveBeenCalledWith(
+        mockUsers,
+        mockCurrentUser,
+      );
+      expect(useUserDetailsNavigationMock).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('Props Validation', () => {
+    it('should handle different user array lengths', () => {
+      const singleUserArray = [mockCurrentUser];
+
+      const {getByTestId} = render(
+        <UserItem currentUser={mockCurrentUser} users={singleUserArray} />,
+      );
+
+      expect(getByTestId(TEST_IDS.USER_ITEM.CARD)).toBeTruthy();
+      expect(useUserDetailsNavigationMock).toHaveBeenCalledWith(
+        singleUserArray,
+        mockCurrentUser,
+      );
     });
   });
 });

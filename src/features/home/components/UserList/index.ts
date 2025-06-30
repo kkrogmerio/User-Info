@@ -1,2 +1,3 @@
 import UsersList from './UserList';
-export {UsersList};
+import styles from './UserList.style';
+export {UsersList,styles};

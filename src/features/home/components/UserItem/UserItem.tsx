@@ -1,27 +1,33 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {User} from '../../../../types/user';
-import {styles} from './index';
+import styles from './UserItem.styles';
 import useUserDetailsNavigation from '../../../../hooks/useUserDetailsNavigation';
+import {TEST_IDS} from '../../../../constants/testIds';
 type UserItemProps = {
   currentUser: User;
   users: User[];
+  testID?: string;
 };
 
 const UserItem: React.FC<UserItemProps> = ({currentUser, users}) => {
   const {handleNextUserPress} = useUserDetailsNavigation(users, currentUser);
+  const {name, username, phone} = currentUser;
   return (
-    <TouchableOpacity onPress={handleNextUserPress} style={styles.card}>
-      <View style={styles.cardContent}>
-        <View style={styles.contentLayout}>
-          <Text style={styles.name}>{currentUser.name}</Text>
-        </View>
-        <View style={styles.contentLayout}>
-          <Text style={styles.username}>{currentUser.username}</Text>
-        </View>
-        <View style={styles.contentLayout}>
-          <Text style={styles.phone}>{currentUser.phone}</Text>
-        </View>
+    <TouchableOpacity
+      onPress={handleNextUserPress}
+      style={styles.card}
+      testID={TEST_IDS.USER_ITEM.CARD}>
+      <View style={styles.cardContent} testID={TEST_IDS.USER_ITEM.CONTENT}>
+        <Text style={styles.name} testID={TEST_IDS.USER_ITEM.NAME}>
+          {name}
+        </Text>
+        <Text style={styles.username} testID={TEST_IDS.USER_ITEM.USERNAME}>
+          {username}
+        </Text>
+        <Text style={styles.phone} testID={TEST_IDS.USER_ITEM.PHONE}>
+          {phone}
+        </Text>
       </View>
     </TouchableOpacity>
   );
