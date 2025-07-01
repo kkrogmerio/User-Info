@@ -1,19 +1,19 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
-import {HomeScreen} from '.';
-import {useUsersQuery} from '@hooks/useUsersQuery';
-import {User} from '@/types/user';
-import {mockProps, mockUsers} from '@test-utils/mockHelpers';
-import {ACCESSIBILITY_ROLES, Strings, TEST_IDS} from '@constants';
+import { render } from '@testing-library/react-native';
+import { HomeScreen } from '.';
+import { useUsersQuery } from '@hooks/useUsersQuery';
+import { User } from '@/types/user';
+import { mockProps, mockUsers } from '@test-utils/mockHelpers';
+import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@constants';
 
 jest.mock('@hooks/useUsersQuery');
 
 jest.mock('../components/MessageView', () => {
   const React = require('react');
-  const {View, Text} = require('react-native');
+  const { View, Text } = require('react-native');
 
   return {
-    MessageView: ({message, testID}: {message: string; testID: string}) => (
+    MessageView: ({ message, testID }: { message: string; testID: string }) => (
       <View testID={testID}>
         <Text>{message}</Text>
       </View>
@@ -23,10 +23,10 @@ jest.mock('../components/MessageView', () => {
 
 jest.mock('../components/UserList', () => {
   const React = require('react');
-  const {View} = require('react-native');
+  const { View } = require('react-native');
 
   return {
-    UsersList: ({data, testID}: {data: User[]; testID: string}) => (
+    UsersList: ({ data, testID }: { data: User[]; testID: string }) => (
       <View testID={testID}>
         {data.map(user => (
           <View key={user.id} testID={`user-${user.id}`} />
@@ -38,10 +38,10 @@ jest.mock('../components/UserList', () => {
 
 jest.mock('../components/UserList', () => {
   const React = require('react');
-  const {View} = require('react-native');
+  const { View } = require('react-native');
 
   return {
-    UsersList: ({data, testID}: {data: User[]; testID: string}) => (
+    UsersList: ({ data, testID }: { data: User[]; testID: string }) => (
       <View testID={testID}>
         {data.map(user => (
           <View key={user.id} testID={`user-${user.id}`} />
@@ -77,7 +77,7 @@ describe('HomeScreen', () => {
       createMockQueryResult(undefined, true, null),
     );
 
-    const {getByTestId, getByText} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.LOADING_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.loading)).toBeTruthy();
@@ -92,7 +92,7 @@ describe('HomeScreen', () => {
       ),
     );
 
-    const {getByTestId, getByText} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.ERROR_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.errorFetching)).toBeTruthy();
@@ -101,7 +101,7 @@ describe('HomeScreen', () => {
   it('should show no users message when data is empty', () => {
     mockUseUsersQuery.mockReturnValue(createMockQueryResult([], false, null));
 
-    const {getByTestId, getByText} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.NO_USERS_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.noUsers)).toBeTruthy();
@@ -112,7 +112,7 @@ describe('HomeScreen', () => {
       createMockQueryResult(undefined, false, null),
     );
 
-    const {getByTestId, getByText} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.NO_USERS_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.noUsers)).toBeTruthy();
@@ -123,7 +123,7 @@ describe('HomeScreen', () => {
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const {getByTestId} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.CONTAINER)).toBeTruthy();
     expect(getByTestId(TEST_IDS.HOME_SCREEN.TITLE)).toBeTruthy();
@@ -135,7 +135,7 @@ describe('HomeScreen', () => {
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const {getByTestId} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.LIST_USERS)).toBeTruthy();
     expect(getByTestId(`user-${mockUsers[0].id}`)).toBeTruthy();
@@ -148,7 +148,7 @@ describe('HomeScreen', () => {
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const {getByTestId} = render(<HomeScreen {...mockProps} />);
+    const { getByTestId } = render(<HomeScreen {...mockProps} />);
     const title = getByTestId(TEST_IDS.HOME_SCREEN.TITLE);
     expect(title).toBeTruthy();
     expect(title.props.accessibilityRole).toBe(ACCESSIBILITY_ROLES.HEADER);

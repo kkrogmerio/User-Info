@@ -1,5 +1,5 @@
-import {Colors} from '@constants';
-import {StyleSheet} from 'react-native';
+import { Colors } from '@constants';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   card: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     shadowOpacity: 0.1,
     shadowRadius: 6,
-    shadowOffset: {width: 0, height: 3},
+    shadowOffset: { width: 0, height: 3 },
     width: '45%',
     height: 'auto',
     paddingHorizontal: 15,

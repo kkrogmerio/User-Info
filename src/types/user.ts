@@ -1,1 +1,6 @@
-export type User = {id: number; name: string; username: string; phone: string};
+export type User = {
+  id: number;
+  name: string;
+  username: string;
+  phone: string;
+};

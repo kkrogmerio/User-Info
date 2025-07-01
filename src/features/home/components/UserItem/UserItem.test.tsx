@@ -1,9 +1,9 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react-native';
-import {UserItem} from '.';
-import {User} from '@/types/user';
-import {TEST_IDS} from '@constants';
-import {mockUsers} from '@test-utils/mockHelpers';
+import { render, fireEvent } from '@testing-library/react-native';
+import { UserItem } from '.';
+import { User } from '@/types/user';
+import { TEST_IDS } from '@constants';
+import { mockUsers } from '@test-utils/mockHelpers';
 
 // Mock the custom hook
 jest.mock('@hooks/useUserDetailsNavigation', () => ({
@@ -11,8 +11,8 @@ jest.mock('@hooks/useUserDetailsNavigation', () => ({
   default: jest.fn(),
 }));
 
-const useUserDetailsNavigationMock =
-  require('@hooks/useUserDetailsNavigation').default as jest.Mock;
+const useUserDetailsNavigationMock = require('@hooks/useUserDetailsNavigation')
+  .default as jest.Mock;
 
 describe('UserItem Component', () => {
   const mockHandleNextUserPress = jest.fn();
@@ -33,7 +33,7 @@ describe('UserItem Component', () => {
 
   describe('Rendering', () => {
     it('should render all user information correctly', () => {
-      const {getByText, getByTestId} = render(
+      const { getByText, getByTestId } = render(
         <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
       );
 
@@ -60,7 +60,7 @@ describe('UserItem Component', () => {
         phone: '+34-123-456-789',
       };
 
-      const {getByText} = render(
+      const { getByText } = render(
         <UserItem currentUser={userWithSpecialChars} users={mockUsers} />,
       );
 
@@ -72,7 +72,7 @@ describe('UserItem Component', () => {
 
   describe('User Interaction', () => {
     it('should call handleNextUserPress when card is pressed', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
       );
 
@@ -99,7 +99,7 @@ describe('UserItem Component', () => {
     it('should handle different user array lengths', () => {
       const singleUserArray = [mockCurrentUser];
 
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserItem currentUser={mockCurrentUser} users={singleUserArray} />,
       );
 
@@ -112,7 +112,7 @@ describe('UserItem Component', () => {
   });
   describe('Accessibility', () => {
     it('should have accessibilityRole "button" and correct accessibilityLabel', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
       );
 

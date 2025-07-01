@@ -1,7 +1,7 @@
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {createAsyncStoragePersister} from '@tanstack/query-async-storage-persister';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {persistQueryClient} from '@tanstack/react-query-persist-client';
+import { persistQueryClient } from '@tanstack/react-query-persist-client';
 import AppNavigator from './src/navigation/AppNavigator';
 import React from 'react';
 

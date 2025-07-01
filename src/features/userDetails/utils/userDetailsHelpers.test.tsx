@@ -1,5 +1,5 @@
-import {mockUsers} from '@test-utils/mockHelpers';
-import {findNextUser} from './userDetailsHelpers';
+import { mockUsers } from '@test-utils/mockHelpers';
+import { findNextUser } from './userDetailsHelpers';
 
 describe('findNextUser', () => {
   it('should return the correct next user and index', () => {

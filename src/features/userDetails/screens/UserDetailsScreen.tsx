@@ -1,20 +1,20 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '@/types/rootStack';
-import {ACCESSIBILITY_ROLES, Strings, TEST_IDS} from '@constants';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@/types/rootStack';
+import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@constants';
 import SCREENS from '@navigation/screenNames';
-import {styles} from './index';
+import { styles } from './index';
 import useUserDetailsNavigation from '@hooks/useUserDetailsNavigation';
 type UserDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
   SCREENS.UserDetails
 >;
 
-const UserDetailsScreen: React.FC<UserDetailsScreenProps> = ({route}) => {
-  const {user, users} = route.params;
+const UserDetailsScreen: React.FC<UserDetailsScreenProps> = ({ route }) => {
+  const { user, users } = route.params;
 
-  const {handleNextUserPress} = useUserDetailsNavigation(users, user);
+  const { handleNextUserPress } = useUserDetailsNavigation(users, user);
   return (
     <View
       style={styles.screenView}

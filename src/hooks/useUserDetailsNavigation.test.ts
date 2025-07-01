@@ -1,8 +1,8 @@
-import {renderHook} from '@testing-library/react-native';
+import { renderHook } from '@testing-library/react-native';
 import useUserDetailsNavigation from './useUserDetailsNavigation';
-import {mockUsers} from '@test-utils/mockHelpers';
+import { mockUsers } from '@test-utils/mockHelpers';
 import SCREENS from '@navigation/screenNames';
-import {Alert} from 'react-native';
+import { Alert } from 'react-native';
 
 // Mock navigation
 const mockNavigate = jest.fn();
@@ -25,7 +25,7 @@ describe('useUserDetailsNavigation', () => {
   });
 
   it('should navigate to next user if next exists', () => {
-    const {result} = renderHook(() =>
+    const { result } = renderHook(() =>
       useUserDetailsNavigation(mockUsers, mockUsers[0]),
     );
 
@@ -39,7 +39,7 @@ describe('useUserDetailsNavigation', () => {
   });
 
   it('should show alert if no next user exists', () => {
-    const {result} = renderHook(() =>
+    const { result } = renderHook(() =>
       useUserDetailsNavigation(mockUsers, mockUsers[2]),
     );
 

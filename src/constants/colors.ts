@@ -1,5 +1,5 @@
 export default {
   primary: '#306230',
-  primaryTextColor:'black',
-  secondaryTextColor:'gray'
+  primaryTextColor: 'black',
+  secondaryTextColor: 'gray',
 };

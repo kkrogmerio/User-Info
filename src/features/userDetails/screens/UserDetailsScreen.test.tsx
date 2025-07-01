@@ -1,14 +1,14 @@
 import React from 'react';
-import {render, fireEvent} from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 import UserDetailsScreen from './UserDetailsScreen';
-import {ACCESSIBILITY_ROLES, Strings, TEST_IDS} from '@constants';
-import {mockProps, mockUsers} from '@test-utils/mockHelpers';
-import {RootStackParamList} from '@/types/rootStack';
-import {RouteProp} from '@react-navigation/native';
+import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@constants';
+import { mockProps, mockUsers } from '@test-utils/mockHelpers';
+import { RootStackParamList } from '@/types/rootStack';
+import { RouteProp } from '@react-navigation/native';
 import SCREENS from '@navigation/screenNames';
 
 // Mock navigation route params
-const mockUser = {id: 1, name: 'Alice', username: 'alice', phone: '123'};
+const mockUser = { id: 1, name: 'Alice', username: 'alice', phone: '123' };
 
 const mockHandleNextUserPress = jest.fn();
 
@@ -32,14 +32,14 @@ describe('UserDetailsScreen', () => {
   });
   describe('Rendering', () => {
     it('should render the container view with correct testID', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserDetailsScreen {...mockProps} route={mockRoute} />,
       );
       expect(getByTestId(TEST_IDS.USER_DETAILS_SCREEN.CONTAINER)).toBeTruthy();
     });
 
     it('should render the username text with correct value, testID and accessibility role', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserDetailsScreen {...mockProps} route={mockRoute} />,
       );
       const usernameText = getByTestId(TEST_IDS.USER_DETAILS_SCREEN.USERNAME);
@@ -51,7 +51,7 @@ describe('UserDetailsScreen', () => {
     });
 
     it('should render the "next user" button with correct text and testID', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserDetailsScreen {...mockProps} route={mockRoute} />,
       );
       const buttonText = getByTestId(
@@ -62,7 +62,7 @@ describe('UserDetailsScreen', () => {
   });
   describe('user interaction', () => {
     it('should call handleNextUserPress when next user button is pressed', () => {
-      const {getByTestId} = render(
+      const { getByTestId } = render(
         <UserDetailsScreen {...mockProps} route={mockRoute} />,
       );
       const button = getByTestId(TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_BUTTON);

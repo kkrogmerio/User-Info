@@ -1,17 +1,17 @@
 import React from 'react';
-import {FlatList} from 'react-native';
-import {User} from '@/types/user';
-import {UserItem} from '../UserItem';
-import {styles} from '.';
-import {TEST_IDS, ACCESSIBILITY_ROLES} from '@constants';
+import { FlatList } from 'react-native';
+import { User } from '@/types/user';
+import { UserItem } from '../UserItem';
+import { styles } from '.';
+import { TEST_IDS, ACCESSIBILITY_ROLES } from '@constants';
 
 interface UsersListProps {
   data: User[];
   testID?: string;
 }
 
-const UsersList: React.FC<UsersListProps> = ({data}) => {
-  const renderUserItem = ({item}: {item: User}) => (
+const UsersList: React.FC<UsersListProps> = ({ data }) => {
+  const renderUserItem = ({ item }: { item: User }) => (
     <UserItem
       currentUser={item}
       users={data}
