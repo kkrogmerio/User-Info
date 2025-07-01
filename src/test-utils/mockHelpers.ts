@@ -1,5 +1,5 @@
-import SCREENS from '../navigation/screenNames';
-import {User} from '../types/user';
+import SCREENS from '@navigation/screenNames';
+import {User} from '@/types/user';
 
 // We'll use 'as any' in this scenario since we only want to mock the properties required for screen inside stack navigator.
 const createMockScreenProps = () => ({

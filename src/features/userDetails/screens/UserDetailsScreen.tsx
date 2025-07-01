@@ -1,12 +1,11 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../types/rootStack';
-import {ACCESSIBILITY_ROLES, Strings} from '../../../constants';
-import SCREENS from '../../../navigation/screenNames';
+import {RootStackParamList} from '@/types/rootStack';
+import {ACCESSIBILITY_ROLES, Strings, TEST_IDS} from '@constants';
+import SCREENS from '@navigation/screenNames';
 import {styles} from './index';
-import useUserDetailsNavigation from '../../../hooks/useUserDetailsNavigation';
-import {TEST_IDS} from '../../../constants/testIds';
+import useUserDetailsNavigation from '@hooks/useUserDetailsNavigation';
 type UserDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
   SCREENS.UserDetails

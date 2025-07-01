@@ -1,14 +1,13 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../types/rootStack';
-import {ACCESSIBILITY_ROLES, Strings} from '../../../constants';
-import {useUsersQuery} from '../../../hooks/useUsersQuery';
-import SCREENS from '../../../navigation/screenNames';
+import {RootStackParamList} from '@/types/rootStack';
+import {ACCESSIBILITY_ROLES, Strings, TEST_IDS} from '@constants';
+import {useUsersQuery} from '@hooks/useUsersQuery';
+import SCREENS from '@navigation/screenNames';
 import {MessageView} from '../components/MessageView';
 import {UsersList} from '../components/UserList';
 import styles from './HomeScreen.styles';
-import {TEST_IDS} from '../../../constants/testIds';
 
 type HomeScreenNavigationProp = NativeStackScreenProps<
   RootStackParamList,

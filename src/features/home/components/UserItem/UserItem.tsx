@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {User} from '../../../../types/user';
+import {User} from '@/types/user';
 import styles from './UserItem.styles';
-import useUserDetailsNavigation from '../../../../hooks/useUserDetailsNavigation';
-import {TEST_IDS} from '../../../../constants/testIds';
-import { ACCESSIBILITY_ROLES } from '../../../../constants';
+import useUserDetailsNavigation from '@hooks/useUserDetailsNavigation';
+import { ACCESSIBILITY_ROLES, TEST_IDS } from '@constants';
 type UserItemProps = {
   currentUser: User;
   users: User[];

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {useQuery} from '@tanstack/react-query';
 import {useNetInfo} from '@react-native-community/netinfo';
-import {User} from '../types/user';
+import {User} from '@/types/user';
 
 const fetchUsers = async () => {
   const {data} = await axios.get<User[]>(

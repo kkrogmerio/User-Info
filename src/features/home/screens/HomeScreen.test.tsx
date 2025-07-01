@@ -1,13 +1,12 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
 import {HomeScreen} from '.';
-import {useUsersQuery} from '../../../hooks/useUsersQuery';
-import {TEST_IDS} from '../../../constants/testIds';
-import {User} from '../../../types/user';
-import {mockProps, mockUsers} from '../../../test-utils/mockHelpers';
-import {ACCESSIBILITY_ROLES, Strings} from '../../../constants';
+import {useUsersQuery} from '@hooks/useUsersQuery';
+import {User} from '@/types/user';
+import {mockProps, mockUsers} from '@test-utils/mockHelpers';
+import {ACCESSIBILITY_ROLES, Strings, TEST_IDS} from '@constants';
 
-jest.mock('../../../hooks/useUsersQuery');
+jest.mock('@hooks/useUsersQuery');
 
 jest.mock('../components/MessageView', () => {
   const React = require('react');

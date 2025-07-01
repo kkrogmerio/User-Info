@@ -1,18 +1,18 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
-import {UserItem} from './';
-import {User} from '../../../../types/user';
-import {TEST_IDS} from '../../../../constants/testIds';
-import {mockUsers} from '../../../../test-utils/mockHelpers';
+import {UserItem} from '.';
+import {User} from '@/types/user';
+import {TEST_IDS} from '@constants';
+import {mockUsers} from '@test-utils/mockHelpers';
 
 // Mock the custom hook
-jest.mock('../../../../hooks/useUserDetailsNavigation', () => ({
+jest.mock('@hooks/useUserDetailsNavigation', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
 
 const useUserDetailsNavigationMock =
-  require('../../../../hooks/useUserDetailsNavigation').default as jest.Mock;
+  require('@hooks/useUserDetailsNavigation').default as jest.Mock;
 
 describe('UserItem Component', () => {
   const mockHandleNextUserPress = jest.fn();

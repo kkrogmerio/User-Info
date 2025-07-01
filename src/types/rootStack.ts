@@ -1,5 +1,5 @@
 import {User} from './user';
-import SCREENS from '../navigation/screenNames';
+import SCREENS from '@navigation/screenNames';
 export type RootStackParamList = {
   [SCREENS.Home]: undefined;
   [SCREENS.UserDetails]: {
@@ -7,3 +7,4 @@ export type RootStackParamList = {
     users: User[];
   };
 };
+

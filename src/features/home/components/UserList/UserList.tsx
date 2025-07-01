@@ -1,10 +1,9 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import {User} from '../../../../types/user';
+import {User} from '@/types/user';
 import {UserItem} from '../UserItem';
 import {styles} from '.';
-import {TEST_IDS} from '../../../../constants/testIds';
-import {ACCESSIBILITY_ROLES} from '../../../../constants';
+import {TEST_IDS, ACCESSIBILITY_ROLES} from '@constants';
 
 interface UsersListProps {
   data: User[];

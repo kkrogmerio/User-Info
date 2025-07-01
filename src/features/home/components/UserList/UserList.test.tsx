@@ -1,9 +1,8 @@
 import React from 'react';
 import {render} from '@testing-library/react-native';
 import {UsersList} from '.';
-import {TEST_IDS} from '../../../../constants/testIds';
-import { mockUsers } from '../../../../test-utils/mockHelpers';
-import { ACCESSIBILITY_ROLES } from '../../../../constants';
+import {TEST_IDS, ACCESSIBILITY_ROLES} from '@constants';
+import {mockUsers} from '../../../../test-utils/mockHelpers';
 
 // Mock the UserItem component
 jest.mock('../UserItem/index', () => {
@@ -19,7 +18,6 @@ jest.mock('../UserItem/index', () => {
   };
 });
 describe('UsersList', () => {
-
   it('should render the list properly', () => {
     const {getByTestId} = render(<UsersList data={mockUsers} />);
 

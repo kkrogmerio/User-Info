@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './MessageView.style';
-import {ACCESSIBILITY_ROLES} from '../../../../constants';
+import {ACCESSIBILITY_ROLES} from '@constants';
 interface Props {
   message: string;
   testID?: string;

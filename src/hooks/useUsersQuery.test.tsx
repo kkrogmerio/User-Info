@@ -4,7 +4,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import axios from 'axios';
 import * as NetInfo from '@react-native-community/netinfo';
 import {useUsersQuery} from './useUsersQuery';
-import {mockUsers} from '../test-utils/mockHelpers';
+import {mockUsers} from '@test-utils/mockHelpers';
 
 jest.mock('axios');
 jest.mock('@react-native-community/netinfo');
@@ -33,7 +33,7 @@ describe('useUsersQuery', () => {
     expect(result.current.data).toEqual(mockUsers);
   });
 
-  it('should not fetch users when offline',async () => {
+  it('should not fetch users when offline', async () => {
     (NetInfo.useNetInfo as jest.Mock).mockReturnValue({isConnected: false});
     const {result} = renderHook(() => useUsersQuery(), {wrapper});
     await waitFor(() => expect(result.current.isError).toBe(false));

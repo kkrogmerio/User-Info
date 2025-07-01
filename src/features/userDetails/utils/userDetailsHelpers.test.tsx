@@ -1,4 +1,4 @@
-import {mockUsers} from '../../../test-utils/mockHelpers';
+import {mockUsers} from '@test-utils/mockHelpers';
 import {findNextUser} from './userDetailsHelpers';
 
 describe('findNextUser', () => {
