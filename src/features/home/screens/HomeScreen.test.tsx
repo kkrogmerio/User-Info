@@ -5,7 +5,7 @@ import {useUsersQuery} from '../../../hooks/useUsersQuery';
 import {TEST_IDS} from '../../../constants/testIds';
 import {User} from '../../../types/user';
 import {mockProps, mockUsers} from '../../../test-utils/mockHelpers';
-import {Strings} from '../../../constants';
+import {ACCESSIBILITY_ROLES, Strings} from '../../../constants';
 
 jest.mock('../../../hooks/useUsersQuery');
 
@@ -67,8 +67,6 @@ const createMockQueryResult = (
     isLoading,
     error,
   } as ReturnType<typeof useUsersQuery>);
-
-
 
 describe('HomeScreen', () => {
   beforeEach(() => {
@@ -146,13 +144,14 @@ describe('HomeScreen', () => {
     expect(getByTestId(`user-${mockUsers[2].id}`)).toBeTruthy();
   });
 
-  it('should display correct title text', () => {
+  it('should display correct title text, along with its header accessibility role', () => {
     mockUseUsersQuery.mockReturnValue(
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const {getByText} = render(<HomeScreen {...mockProps} />);
-
-    expect(getByText(Strings.usersList)).toBeTruthy();
+    const {getByTestId} = render(<HomeScreen {...mockProps} />);
+    const title = getByTestId(TEST_IDS.HOME_SCREEN.TITLE);
+    expect(title).toBeTruthy();
+    expect(title.props.accessibilityRole).toBe(ACCESSIBILITY_ROLES.HEADER);
   });
 });

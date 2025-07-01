@@ -3,6 +3,7 @@ import {render} from '@testing-library/react-native';
 import {UsersList} from '.';
 import {TEST_IDS} from '../../../../constants/testIds';
 import { mockUsers } from '../../../../test-utils/mockHelpers';
+import { ACCESSIBILITY_ROLES } from '../../../../constants';
 
 // Mock the UserItem component
 jest.mock('../UserItem/index', () => {
@@ -23,6 +24,12 @@ describe('UsersList', () => {
     const {getByTestId} = render(<UsersList data={mockUsers} />);
 
     expect(getByTestId(`${TEST_IDS.LIST_USERS}`)).toBeTruthy();
+  });
+
+  it('should set accessibilityRole "list" on the list of users', () => {
+    const {getByTestId} = render(<UsersList data={mockUsers} />);
+    const flatList = getByTestId(TEST_IDS.LIST_USERS);
+    expect(flatList.props.accessibilityRole).toBe(ACCESSIBILITY_ROLES.LIST);
   });
 
   it('should show all users', () => {
