@@ -4,6 +4,7 @@ import {User} from '../../../../types/user';
 import styles from './UserItem.styles';
 import useUserDetailsNavigation from '../../../../hooks/useUserDetailsNavigation';
 import {TEST_IDS} from '../../../../constants/testIds';
+import { ACCESSIBILITY_ROLES } from '../../../../constants';
 type UserItemProps = {
   currentUser: User;
   users: User[];
@@ -17,7 +18,9 @@ const UserItem: React.FC<UserItemProps> = ({currentUser, users}) => {
     <TouchableOpacity
       onPress={handleNextUserPress}
       style={styles.card}
-      testID={TEST_IDS.USER_ITEM.CARD}>
+      testID={TEST_IDS.USER_ITEM.CARD}
+      accessibilityRole={ACCESSIBILITY_ROLES.BUTTON}
+      accessibilityLabel={`${name}, username: ${username}, phone: ${phone}`}>
       <View style={styles.cardContent} testID={TEST_IDS.USER_ITEM.CONTENT}>
         <Text style={styles.name} testID={TEST_IDS.USER_ITEM.NAME}>
           {name}

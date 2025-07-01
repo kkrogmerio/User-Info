@@ -3,7 +3,7 @@ import {render, fireEvent} from '@testing-library/react-native';
 import {UserItem} from './';
 import {User} from '../../../../types/user';
 import {TEST_IDS} from '../../../../constants/testIds';
-import { mockUsers } from '../../../../test-utils/mockHelpers';
+import {mockUsers} from '../../../../test-utils/mockHelpers';
 
 // Mock the custom hook
 jest.mock('../../../../hooks/useUserDetailsNavigation', () => ({
@@ -107,6 +107,21 @@ describe('UserItem Component', () => {
       expect(useUserDetailsNavigationMock).toHaveBeenCalledWith(
         singleUserArray,
         mockCurrentUser,
+      );
+    });
+  });
+  describe('Accessibility', () => {
+    it('should have accessibilityRole "button" and correct accessibilityLabel', () => {
+      const {getByTestId} = render(
+        <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
+      );
+
+      const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
+      // Check role
+      expect(card.props.accessibilityRole).toBe('button');
+      // Check label
+      expect(card.props.accessibilityLabel).toBe(
+        `${mockCurrentUser.name}, username: ${mockCurrentUser.username}, phone: ${mockCurrentUser.phone}`,
       );
     });
   });

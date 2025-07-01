@@ -4,6 +4,7 @@ import {User} from '../../../../types/user';
 import {UserItem} from '../UserItem';
 import {styles} from '.';
 import {TEST_IDS} from '../../../../constants/testIds';
+import {ACCESSIBILITY_ROLES} from '../../../../constants';
 
 interface UsersListProps {
   data: User[];
@@ -30,6 +31,7 @@ const UsersList: React.FC<UsersListProps> = ({data}) => {
       numColumns={2}
       showsVerticalScrollIndicator={false}
       testID={`${TEST_IDS.LIST_USERS}`}
+      accessibilityRole={ACCESSIBILITY_ROLES.LIST}
     />
   );
 };

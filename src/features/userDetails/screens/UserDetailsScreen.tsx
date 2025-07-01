@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../types/rootStack';
-import {Strings} from '../../../constants';
+import {ACCESSIBILITY_ROLES, Strings} from '../../../constants';
 import SCREENS from '../../../navigation/screenNames';
 import {styles} from './index';
 import useUserDetailsNavigation from '../../../hooks/useUserDetailsNavigation';
@@ -22,13 +22,15 @@ const UserDetailsScreen: React.FC<UserDetailsScreenProps> = ({route}) => {
       testID={TEST_IDS.USER_DETAILS_SCREEN.CONTAINER}>
       <Text
         style={styles.username}
-        testID={TEST_IDS.USER_DETAILS_SCREEN.USERNAME}>
+        testID={TEST_IDS.USER_DETAILS_SCREEN.USERNAME}
+        accessibilityRole={ACCESSIBILITY_ROLES.HEADER}>
         {Strings.username} {user.username}
       </Text>
       <View style={styles.nextUserLayout}>
         <TouchableOpacity
           onPress={handleNextUserPress}
-          testID={TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_BUTTON}>
+          testID={TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_BUTTON}
+          accessibilityRole={ACCESSIBILITY_ROLES.BUTTON}>
           <Text
             style={styles.nextUser}
             testID={TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_TEXT}>

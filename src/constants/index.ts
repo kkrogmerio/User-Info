@@ -1,3 +1,4 @@
 import Colors from './colors';
 import Strings from './strings';
-export {Colors, Strings};
+import ACCESSIBILITY_ROLES from './accessibility';
+export {Colors, Strings, ACCESSIBILITY_ROLES};

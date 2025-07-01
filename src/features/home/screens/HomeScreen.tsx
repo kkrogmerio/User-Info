@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../types/rootStack';
-import {Strings} from '../../../constants';
+import {ACCESSIBILITY_ROLES, Strings} from '../../../constants';
 import {useUsersQuery} from '../../../hooks/useUsersQuery';
 import SCREENS from '../../../navigation/screenNames';
 import {MessageView} from '../components/MessageView';
@@ -45,7 +45,10 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = () => {
 
   return (
     <View style={styles.screenView} testID={TEST_IDS.HOME_SCREEN.CONTAINER}>
-      <Text style={styles.title} testID={TEST_IDS.HOME_SCREEN.TITLE}>
+      <Text
+        style={styles.title}
+        testID={TEST_IDS.HOME_SCREEN.TITLE}
+        accessibilityRole={ACCESSIBILITY_ROLES.HEADER}>
         {Strings.usersList}
       </Text>
       <UsersList data={data} testID={TEST_IDS.LIST_USERS} />

@@ -4,20 +4,26 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import UsersStackNavigator from '../stacks/HomeStack';
 import {tabBarStyle} from '../navigationStyles';
 import SCREENS from '../screenNames';
+
 const Tab = createBottomTabNavigator();
+
+const HOME_TAB = {
+  label: 'Home',
+  icon: 'home-outline',
+} as const;
 
 const AppTabNavigator = () => (
   <Tab.Navigator
     screenOptions={() => ({
       tabBarIcon: ({color}) => (
-        <Icon name={'home-outline'} size={36} color={color} />
+        <Icon name={HOME_TAB.icon} size={36} color={color} />
       ),
       ...tabBarStyle,
     })}>
     <Tab.Screen
       name={SCREENS.HomeTab}
       component={UsersStackNavigator}
-      options={{headerShown: false, tabBarLabel: 'Home'}}
+      options={{headerShown: false, tabBarLabel: HOME_TAB.label}}
     />
   </Tab.Navigator>
 );
