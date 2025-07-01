@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {User} from '@/types/user';
 import styles from './UserItem.styles';
@@ -10,7 +10,7 @@ type UserItemProps = {
   testID?: string;
 };
 
-const UserItem: React.FC<UserItemProps> = ({currentUser, users}) => {
+const UserItem: React.FC<UserItemProps> = memo(({currentUser, users}) => {
   const {handleNextUserPress} = useUserDetailsNavigation(users, currentUser);
   const {name, username, phone} = currentUser;
   return (
@@ -33,6 +33,6 @@ const UserItem: React.FC<UserItemProps> = ({currentUser, users}) => {
       </View>
     </TouchableOpacity>
   );
-};
+})
 
 export default UserItem;
