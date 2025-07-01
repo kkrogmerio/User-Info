@@ -16,6 +16,6 @@
       "@test-utils/*": ["test-utils/*"],
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*","env.d.ts"],
   "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
