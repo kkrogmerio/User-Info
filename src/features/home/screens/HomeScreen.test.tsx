@@ -26,7 +26,7 @@ jest.mock('../components/UserList', () => {
   const {View} = require('react-native');
 
   return {
-    UsersList: ({data, testID}: {data: any[]; testID: string}) => (
+    UsersList: ({data, testID}: {data: User[]; testID: string}) => (
       <View testID={testID}>
         {data.map(user => (
           <View key={user.id} testID={`user-${user.id}`} />
@@ -41,7 +41,7 @@ jest.mock('../components/UserList', () => {
   const {View} = require('react-native');
 
   return {
-    UsersList: ({data, testID}: {data: any[]; testID: string}) => (
+    UsersList: ({data, testID}: {data: User[]; testID: string}) => (
       <View testID={testID}>
         {data.map(user => (
           <View key={user.id} testID={`user-${user.id}`} />

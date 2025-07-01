@@ -3,6 +3,7 @@ import {render} from '@testing-library/react-native';
 import {UsersList} from '.';
 import {TEST_IDS, ACCESSIBILITY_ROLES} from '@constants';
 import {mockUsers} from '../../../../test-utils/mockHelpers';
+import { User } from '@/types/user';
 
 // Mock the UserItem component
 jest.mock('../UserItem/index', () => {
@@ -10,7 +11,7 @@ jest.mock('../UserItem/index', () => {
   const {View, Text} = require('react-native');
 
   return {
-    UserItem: ({currentUser, testID}: {currentUser: any; testID: string}) => (
+    UserItem: ({currentUser, testID}: {currentUser: User; testID: string}) => (
       <View testID={testID}>
         <Text>{currentUser.name}</Text>
       </View>
