@@ -12,12 +12,14 @@ const HOME_TAB = {
   icon: 'home-outline',
 } as const;
 
+const HomeTabIcon = ({ color }: { color: string }) => (
+  <TabBarIcon icon={HOME_TAB.icon} color={color} />
+);
+
 const AppTabNavigator = () => (
   <Tab.Navigator
     screenOptions={() => ({
-      tabBarIcon: ({ color }) => (
-        <TabBarIcon icon={HOME_TAB.icon} color={color} />
-      ),
+      tabBarIcon: HomeTabIcon,
       ...tabBarStyle,
     })}>
     <Tab.Screen
