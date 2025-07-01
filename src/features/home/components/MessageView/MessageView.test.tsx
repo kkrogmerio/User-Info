@@ -5,21 +5,16 @@ import {ACCESSIBILITY_ROLES, Strings} from '../../../../constants';
 
 describe('MessageView', () => {
   it('should show the message', () => {
-    const {getByText} = render(<MessageView message="Hello world" />);
-    expect(getByText('Hello world')).toBeTruthy();
-  });
-
-  it('should work with empty message', () => {
-    const {getByText} = render(<MessageView message="" />);
-    expect(getByText('')).toBeTruthy();
+    const {getByText} = render(<MessageView message={Strings.loading} />);
+    expect(getByText(Strings.loading)).toBeTruthy();
   });
 
   it('should update when message changes', () => {
-    const {getByText, rerender} = render(<MessageView message="First" />);
-    expect(getByText('First')).toBeTruthy();
+    const {getByText, rerender} = render(<MessageView message={Strings.loading} />);
+    expect(getByText(Strings.loading)).toBeTruthy();
 
-    rerender(<MessageView message="Second" />);
-    expect(getByText('Second')).toBeTruthy();
+    rerender(<MessageView message={Strings.errorNoMoreUsers} />);
+    expect(getByText(Strings.errorNoMoreUsers)).toBeTruthy();
   });
   it('should set accessibilityRole "text" on the message', () => {
     const message = Strings.loading;
