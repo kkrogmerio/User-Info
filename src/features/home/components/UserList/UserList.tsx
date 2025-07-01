@@ -10,7 +10,7 @@ interface UsersListProps {
   testID?: string;
 }
 
-const UsersList: React.FC<UsersListProps> = ({ data }) => {
+const UsersList: React.FC<UsersListProps> = ({ data, testID }) => {
   const renderUserItem = ({ item }: { item: User }) => (
     <UserItem
       currentUser={item}
@@ -29,7 +29,7 @@ const UsersList: React.FC<UsersListProps> = ({ data }) => {
       contentContainerStyle={styles.contentContainer}
       numColumns={2}
       showsVerticalScrollIndicator={false}
-      testID={`${TEST_IDS.LIST_USERS}`}
+      testID={testID || `${TEST_IDS.LIST_USERS}`}
       accessibilityRole={ACCESSIBILITY_ROLES.LIST}
     />
   );

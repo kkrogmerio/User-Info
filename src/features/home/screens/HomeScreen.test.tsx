@@ -9,7 +9,6 @@ import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@constants';
 jest.mock('@hooks/useUsersQuery');
 
 jest.mock('../components/MessageView', () => {
-  const React = require('react');
   const { View, Text } = require('react-native');
 
   return {
@@ -22,7 +21,6 @@ jest.mock('../components/MessageView', () => {
 });
 
 jest.mock('../components/UserList', () => {
-  const React = require('react');
   const { View } = require('react-native');
 
   return {
@@ -37,7 +35,6 @@ jest.mock('../components/UserList', () => {
 });
 
 jest.mock('../components/UserList', () => {
-  const React = require('react');
   const { View } = require('react-native');
 
   return {

@@ -7,7 +7,6 @@ import { User } from '@/types/user';
 
 // Mock the UserItem component
 jest.mock('../UserItem/index', () => {
-  const React = require('react');
   const { View, Text } = require('react-native');
 
   return {
