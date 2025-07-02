@@ -1,21 +1,22 @@
 import { Colors } from '@constants';
 import { StyleSheet } from 'react-native';
-
+export const ITEM_HEIGHT=120;
+export const ITEM_MARGIN_VERTICAL=9;
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#ffffff',
     borderRadius: 12,
-    marginVertical: 8,
+    marginVertical: ITEM_MARGIN_VERTICAL,
     marginHorizontal: '2.5%',
     elevation: 5,
     shadowOpacity: 0.1,
     shadowRadius: 6,
     shadowOffset: { width: 0, height: 3 },
     width: '45%',
-    height: 'auto',
     paddingHorizontal: 15,
     paddingVertical: 20,
     alignSelf: 'center',
+    height:ITEM_HEIGHT,
   },
   cardContent: {
     margin: 5,

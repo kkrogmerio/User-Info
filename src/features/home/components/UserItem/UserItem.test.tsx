@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { UserItem } from '.';
 import { User } from '@/types/user';
-import { Strings, TEST_IDS } from '@constants';
+import { TEST_IDS } from '@constants';
 import { mockUsers } from '@test-utils/mockHelpers';
 import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
 

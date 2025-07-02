@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  screenView: { flex: 1, width: '100%', height: '100%', marginTop: 60 },
+  screenView: { flex: 1, width: '100%', height: '100%', marginTop: 30 },
   title: {
     textAlign: 'center',
     fontWeight: 'bold',

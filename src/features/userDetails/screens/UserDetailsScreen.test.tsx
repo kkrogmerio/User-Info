@@ -3,8 +3,6 @@ import { render, fireEvent } from '@testing-library/react-native';
 import { UserDetailsScreen } from '.';
 import {
   ACCESSIBILITY_HINTS,
-  ACCESSIBILITY_ROLES,
-  Strings,
   TEST_IDS,
 } from '@/constants';
 import { mockProps, mockUsers } from '@/test-utils/mockHelpers';
@@ -12,7 +10,6 @@ import { RootStackParamList } from '@/types/rootStack';
 import SCREENS from '@/navigation/screenNames';
 import { RouteProp } from '@react-navigation/native';
 import { User } from '@/types/user';
-import { UserDetailField } from '../components/UserDetailsField';
 
 // Mock navigation route params
 const mockUser: User = {

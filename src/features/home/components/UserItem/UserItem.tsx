@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { User } from '@/types/user';
 import styles from './UserItem.styles';
 import useUserDetailsNavigation from '@hooks/useUserDetailsNavigation';
-import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@constants';
+import { ACCESSIBILITY_ROLES, TEST_IDS } from '@constants';
 import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
 type UserItemProps = {
   currentUser: User;

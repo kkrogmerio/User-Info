@@ -4,6 +4,7 @@ import { User } from '@/types/user';
 import { UserItem } from '../UserItem';
 import { styles } from '.';
 import { TEST_IDS, ACCESSIBILITY_ROLES } from '@constants';
+import { INITIAL_ITEMS, getGridItemLayout } from '../../utils/getGridItemLayout';
 
 interface UsersListProps {
   data: User[];
@@ -25,6 +26,8 @@ const UsersList: React.FC<UsersListProps> = ({ data, testID }) => {
     <FlatList
       data={data}
       keyExtractor={keyExtractor}
+      initialNumToRender={INITIAL_ITEMS}
+      getItemLayout={getGridItemLayout}
       renderItem={renderUserItem}
       contentContainerStyle={styles.contentContainer}
       numColumns={2}
