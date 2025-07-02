@@ -4,4 +4,8 @@ const ACCESSIBILITY_ROLES = {
   LIST: 'list',
   HEADER: 'header',
 } as const;
-export default ACCESSIBILITY_ROLES;
+const ACCESSIBILITY_HINTS = {
+  AFTER_READING_USER_INFORMATION:
+    'Once you’ve reviewed the user’s contact information, proceed to the next user.',
+};
+export { ACCESSIBILITY_HINTS, ACCESSIBILITY_ROLES };
