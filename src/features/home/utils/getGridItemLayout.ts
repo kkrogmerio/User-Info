@@ -1,12 +1,13 @@
 import { Dimensions } from "react-native";
 import { ITEM_HEIGHT, ITEM_MARGIN_VERTICAL } from "../components/UserItem/UserItem.styles";
 import { User } from "@/types/user";
+const screenHeight = Dimensions.get('window').height;
 
 // How many columns of cards in the grid (2 cards per row)
-const GRID_NUM_COLUMNS   = 2;
+const GRID_NUM_COLUMNS = 2;
 // Height of a full row: card height + top and bottom margin
-const ROW_HEIGHT = ITEM_HEIGHT + (ITEM_MARGIN_VERTICAL * 2);
-const screenHeight = Dimensions.get('window').height;
+export const ROW_HEIGHT = ITEM_HEIGHT + (ITEM_MARGIN_VERTICAL * 2);
+
 // How many full rows fit on the screen (round up for partial rows)
 const VIEWPORT_ROWS = Math.ceil(screenHeight / ROW_HEIGHT);
 
