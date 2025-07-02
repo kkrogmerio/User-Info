@@ -34,12 +34,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: Colors.secondaryTextColor,
   },
-  phone: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: Colors.secondaryTextColor,
-  },
 });
 
 export default styles;

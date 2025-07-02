@@ -77,7 +77,7 @@ describe('HomeScreen', () => {
     const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.LOADING_MESSAGE)).toBeTruthy();
-    expect(getByText(Strings.loading)).toBeTruthy();
+    expect(getByText(Strings.fetchDataStatus.loading)).toBeTruthy();
   });
 
   it('should show error message when there is an error', () => {
@@ -92,7 +92,7 @@ describe('HomeScreen', () => {
     const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
 
     expect(getByTestId(TEST_IDS.HOME_SCREEN.ERROR_MESSAGE)).toBeTruthy();
-    expect(getByText(Strings.errorFetching)).toBeTruthy();
+    expect(getByText(Strings.fetchDataStatus.errorFetching)).toBeTruthy();
   });
 
   it('should show no users message when data is empty', () => {

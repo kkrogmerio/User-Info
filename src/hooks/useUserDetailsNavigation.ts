@@ -20,7 +20,7 @@ const useUserDetailsNavigation = (users: User[], currentUser: User) => {
         users: users,
       });
     } else {
-      Alert.alert(Strings.errorNoMoreUsers);
+      Alert.alert(Strings.fetchDataStatus.errorNoMoreUsers);
     }
   }, [users, currentUser.id, navigate]);
 

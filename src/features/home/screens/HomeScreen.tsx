@@ -20,7 +20,7 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = () => {
   if (isLoading) {
     return (
       <MessageView
-        message={Strings.loading}
+        message={Strings.fetchDataStatus.loading}
         testID={TEST_IDS.HOME_SCREEN.LOADING_MESSAGE}
       />
     );
@@ -28,7 +28,7 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = () => {
   if (error) {
     return (
       <MessageView
-        message={Strings.errorFetching}
+        message={Strings.fetchDataStatus.errorFetching}
         testID={TEST_IDS.HOME_SCREEN.ERROR_MESSAGE}
       />
     );

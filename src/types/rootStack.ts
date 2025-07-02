@@ -3,7 +3,7 @@ import SCREENS from '@navigation/screenNames';
 export type RootStackParamList = {
   [SCREENS.Home]: undefined;
   [SCREENS.UserDetails]: {
-    user: { id: number; name: string; username: string; phone: string };
+    user: User;
     users: User[];
   };
 };
