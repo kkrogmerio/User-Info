@@ -1,10 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { UserDetailsScreen } from '.';
-import {
-  ACCESSIBILITY_HINTS,
-  TEST_IDS,
-} from '@/constants';
+import { ACCESSIBILITY_HINTS, TEST_IDS } from '@/constants';
 import { mockProps, mockUsers } from '@/test-utils/mockHelpers';
 import { RootStackParamList } from '@/types/rootStack';
 import SCREENS from '@/navigation/screenNames';
@@ -23,7 +20,7 @@ const mockUser: User = {
 const mockHandleNextUserPress = jest.fn();
 
 // Mock the custom hook
-jest.mock('@hooks/useUserDetailsNavigation', () =>
+jest.mock('../hooks/useUserDetailsNavigation', () =>
   jest.fn(() => ({
     handleNextUserPress: mockHandleNextUserPress,
   })),
@@ -62,7 +59,9 @@ describe('UserDetailsScreen', () => {
     const { getByTestId } = render(
       <UserDetailsScreen {...mockProps} route={mockRoute} />,
     );
-    expect(getByTestId(TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_BUTTON)).toBeTruthy();
+    expect(
+      getByTestId(TEST_IDS.USER_DETAILS_SCREEN.NEXT_USER_BUTTON),
+    ).toBeTruthy();
   });
 
   it('should call handleNextUserPress when NextUserButton is pressed', () => {

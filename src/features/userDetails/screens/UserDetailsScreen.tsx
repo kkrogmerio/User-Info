@@ -5,7 +5,7 @@ import { RootStackParamList } from '@/types/rootStack';
 import { ACCESSIBILITY_HINTS, Strings, TEST_IDS } from '@constants';
 import SCREENS from '@navigation/screenNames';
 import { styles } from './index';
-import useUserDetailsNavigation from '@hooks/useUserDetailsNavigation';
+import useUserDetailsNavigation from '@/features/userDetails/hooks/useUserDetailsNavigation';
 import { UserDetailField } from '../components/UserDetailsField';
 import { NextUserButton } from '../components/NextUserButton';
 type UserDetailsScreenProps = NativeStackScreenProps<

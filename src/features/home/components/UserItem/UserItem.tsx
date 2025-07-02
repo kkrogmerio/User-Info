@@ -2,9 +2,12 @@ import React, { memo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { User } from '@/types/user';
 import styles from './UserItem.styles';
-import useUserDetailsNavigation from '@hooks/useUserDetailsNavigation';
 import { ACCESSIBILITY_ROLES, TEST_IDS } from '@constants';
 import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@/types/rootStack';
+import { useNavigation } from '@react-navigation/native';
+import SCREENS from '@/navigation/screenNames';
 type UserItemProps = {
   currentUser: User;
   users: User[];
@@ -12,11 +15,14 @@ type UserItemProps = {
 };
 
 const UserItem: React.FC<UserItemProps> = memo(({ currentUser, users }) => {
-  const { handleNextUserPress } = useUserDetailsNavigation(users, currentUser);
+  const { navigate } =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const { name, username } = currentUser;
   return (
     <TouchableOpacity
-      onPress={handleNextUserPress}
+      onPress={() =>
+        navigate(SCREENS.UserDetails, { user: currentUser, users })
+      }
       style={styles.card}
       testID={TEST_IDS.USER_ITEM.CARD}
       accessibilityRole={ACCESSIBILITY_ROLES.BUTTON}

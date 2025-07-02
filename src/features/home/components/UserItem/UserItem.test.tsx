@@ -5,19 +5,19 @@ import { User } from '@/types/user';
 import { TEST_IDS } from '@constants';
 import { mockUsers } from '@test-utils/mockHelpers';
 import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
+import SCREENS from '@/navigation/screenNames';
 
-// Mock the custom hook
-jest.mock('@hooks/useUserDetailsNavigation', () => ({
-  __esModule: true,
-  default: jest.fn(),
+// 1. Mock useNavigation from @react-navigation/native
+const mockNavigate = jest.fn();
+
+jest.mock('@react-navigation/native', () => ({
+  ...jest.requireActual('@react-navigation/native'),
+  useNavigation: () => ({
+    navigate: mockNavigate,
+  }),
 }));
 
-const useUserDetailsNavigationMock = require('@hooks/useUserDetailsNavigation')
-  .default as jest.Mock;
-
 describe('UserItem Component', () => {
-  const mockHandleNextUserPress = jest.fn();
-
   const mockCurrentUser: User = {
     id: 1,
     name: 'John Doe',
@@ -28,9 +28,6 @@ describe('UserItem Component', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    useUserDetailsNavigationMock.mockReturnValue({
-      handleNextUserPress: mockHandleNextUserPress,
-    });
   });
 
   describe('Rendering', () => {
@@ -70,7 +67,7 @@ describe('UserItem Component', () => {
   });
 
   describe('User Interaction', () => {
-    it('should call handleNextUserPress when card is pressed', () => {
+    it('should call navigate with correct params when card is pressed', () => {
       const { getByTestId } = render(
         <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
       );
@@ -78,35 +75,28 @@ describe('UserItem Component', () => {
       const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
       fireEvent.press(card);
 
-      expect(mockHandleNextUserPress).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  describe('Hook Integration', () => {
-    it('should pass correct parameters to useUserDetailsNavigation hook', () => {
-      render(<UserItem currentUser={mockCurrentUser} users={mockUsers} />);
-
-      expect(useUserDetailsNavigationMock).toHaveBeenCalledWith(
-        mockUsers,
-        mockCurrentUser,
-      );
-      expect(useUserDetailsNavigationMock).toHaveBeenCalledTimes(1);
+      expect(mockNavigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
+        user: mockCurrentUser,
+        users: mockUsers,
+      });
     });
   });
 
   describe('Props Validation', () => {
-    it('should handle different user array lengths', () => {
+    it('should call navigate with a single user in the array', () => {
       const singleUserArray = [mockCurrentUser];
 
       const { getByTestId } = render(
         <UserItem currentUser={mockCurrentUser} users={singleUserArray} />,
       );
 
-      expect(getByTestId(TEST_IDS.USER_ITEM.CARD)).toBeTruthy();
-      expect(useUserDetailsNavigationMock).toHaveBeenCalledWith(
-        singleUserArray,
-        mockCurrentUser,
-      );
+      const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
+      fireEvent.press(card);
+
+      expect(mockNavigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
+        user: mockCurrentUser,
+        users: singleUserArray,
+      });
     });
   });
   describe('Accessibility', () => {
