@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "test:cov": "jest --coverage",
+    "test:cov": "jest --watchAll --detectOpenHandles --coverage",
     "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
