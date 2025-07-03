@@ -17,6 +17,7 @@ export const TEST_IDS = {
     LOADING_MESSAGE: 'loading-message',
     ERROR_MESSAGE: 'error-message',
     NO_USERS_MESSAGE: 'no-users-message',
+    HOME_ICON: 'home-icon',
   },
   USER_DETAILS_SCREEN: {
     CONTAINER: 'user-details-screen',

@@ -1,22 +1,27 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import UsersStackNavigator from '../stacks/HomeStack';
-import { tabBarStyle } from '../navigationStyles';
-import SCREENS from '../screenNames';
-import { TabBarIcon } from './TabBarIcon';
+import HomeStackNavigator from '@/navigation/stacks/HomeStack';
+import { tabBarStyle } from '@navigation/navigationStyles';
+import SCREENS from '@navigation/screenNames';
+import { TabBarIcon } from '../TabBarIcon';
+import { TEST_IDS } from '@/constants';
 
 const Tab = createBottomTabNavigator();
 
-const HOME_TAB = {
+export const HOME_TAB = {
   label: 'Home',
   icon: 'home-outline',
 } as const;
 
 const HomeTabIcon = ({ color }: { color: string }) => (
-  <TabBarIcon icon={HOME_TAB.icon} color={color} />
+  <TabBarIcon
+    icon={HOME_TAB.icon}
+    color={color}
+    testID={TEST_IDS.HOME_SCREEN.HOME_ICON}
+  />
 );
 
-const AppTabNavigator = () => (
+const HomeTabNavigator = () => (
   <Tab.Navigator
     screenOptions={() => ({
       tabBarIcon: HomeTabIcon,
@@ -24,10 +29,10 @@ const AppTabNavigator = () => (
     })}>
     <Tab.Screen
       name={SCREENS.HomeTab}
-      component={UsersStackNavigator}
+      component={HomeStackNavigator}
       options={{ headerShown: false, tabBarLabel: HOME_TAB.label }}
     />
   </Tab.Navigator>
 );
 
-export default AppTabNavigator;
+export default HomeTabNavigator;
