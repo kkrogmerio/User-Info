@@ -1,79 +1,72 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# PlanNetTest
 
-# Getting Started
+I built a simple React Native app that lists users from a mock API. Firstly, I used a traditional layered module structure, but over time I realized it was hard to maintain and test, so I decided to refactor and improve it. It was not well-organized, had low code coverage, was difficult to maintain, and tests were missing for most parts.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+I refactored the project to use a feature-based, clean architecture. Now, each feature has its own folder, and the code is separated by responsibility. This made it easier for me to write unit tests for every screen, component, utility, and hook in the app.
 
-## Step 1: Start the Metro Server
+While refactoring, I fixed all SonarQube issues and also resolved vulnerabilities found by GitHub Dependabot. After these changes, SonarQube reported zero issues.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+I also added accessibility support for people with visual impairments, using React Native’s accessibility props. This means the app can be much easier used by people with disabilities.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+The project is now more maintainable and testable. The code is cleaner, there are no security warnings, and it is more accessible.
 
-```bash
-# using npm
-npm start
+## Commands
 
-# OR using Yarn
-yarn start
-```
+- `yarn start` starts Metro bundler
+- `yarn android` runs the app on Android
+- `yarn ios` runs the app on iOS
+- `yarn lint` checks code style
+- `yarn test` runs all tests
+- `yarn test:cov` shows test coverage
+- `yarn install` installs packages
 
-## Step 2: Start your Application
+## Libraries
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- react, react-native
+- typescript
+- @react-navigation
+- @tanstack/react-query
+- axios
+- @react-native-async-storage/async-storage
+- react-native-vector-icons
+- react-native-safe-area-context
+- react-native-screens
+- react-native-dotenv
+- jest, @testing-library/react-native (testing)
+- eslint, prettier (code style)
 
-### For Android
+## Code Style
 
-```bash
-# using npm
-npm run android
+- Run `yarn lint` to check code
+- Run Prettier in your editor or use `prettier` if set up
+- All code uses TypeScript
 
-# OR using Yarn
-yarn android
-```
+## Structure
 
-### For iOS
+- `src/constants` has colors, strings, test ids
+- `src/features` has app features *each feature has components, screens, utils, hooks*
+- `src/navigation` has navigation setup
+- `src/types` has TypeScript types
+- `src/test-utils` has test helpers
 
-```bash
-# using npm
-npm run ios
+## Tests
 
-# OR using Yarn
-yarn ios
-```
+- Run `yarn test` to check tests
+- Run `yarn test:cov` for coverage
+- All code is tested
+- Coverage is 100 percent
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## SonarQube/SonarCloud
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+- No vulnerabilities
+- No code smells or bugs
+- If you use Sonar, run your usual scan
 
-## Step 3: Modifying your App
+## How to Start
 
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. Run `yarn install`
+2. Run `yarn start`
+3. Run `yarn android` or `yarn ios`
+4. Run `yarn test` to check tests
+5. Run `yarn test:cov` for coverage
+6. Run `yarn lint` to check code style
