@@ -1,3 +1,4 @@
+/* global jest */
 import '@testing-library/jest-dom';
 import '@testing-library/jest-native/extend-expect';
 
@@ -12,7 +13,6 @@ jest.mock('@react-native-community/netinfo', () => {
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
 jest.mock('react-native-vector-icons/MaterialCommunityIcons', () => 'Icon');
-
 // React Navigation calls the icon function multiple times during the rendering process to handle different icon states (focused/unfocused).
 // https://github.com/react-navigation/react-navigation/issues/546
 const originalConsoleError = console.error;

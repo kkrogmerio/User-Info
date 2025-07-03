@@ -1,4 +1,4 @@
-# PlanNetTest
+# Users Info
 
 I built a simple React Native app that lists users from a mock API. Firstly, I used a traditional layered module structure, but over time I realized it was hard to maintain and test, so I decided to refactor and improve it. It was not well-organized, had low code coverage, was difficult to maintain, and tests were missing for most parts.
 
