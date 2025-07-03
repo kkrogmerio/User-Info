@@ -5,8 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { TEST_IDS } from '@/constants';
 import { HOME_TAB } from './HomeTab';
 
-// Temporary fix: Suppress Animated(View) act(...) warnings from React Navigation tests
-// TODO: Find the root cause and remove this ignore once a proper solution exists
+// React Navigation calls the icon function multiple times during the rendering process to handle different states (focused/unfocused).
+// https://github.com/react-navigation/react-navigation/issues/546
 const originalConsoleError = console.error;
 
 console.error = (...args) => {
