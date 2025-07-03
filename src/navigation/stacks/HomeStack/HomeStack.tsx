@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '@features/home/screens';
 import { UserDetailsScreen } from '@features/userDetails/screens';
-import { RootStackParamList } from '@/types/rootStack';
+import { RootStackParamList } from '@shared/types/rootStack';
 import {
   stackHeaderStyle,
   userDetailsScreenStyle,

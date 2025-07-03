@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import NextUserButton from './NextUserButton';
-import { TEST_IDS, ACCESSIBILITY_ROLES, Strings } from '@/constants';
+import { TEST_IDS, ACCESSIBILITY_ROLES, Strings } from '@shared/constants';
 
 describe('NextUserButton', () => {
   const label = Strings.nextUser;

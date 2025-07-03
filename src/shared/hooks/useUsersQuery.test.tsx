@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import axios from 'axios';
 import * as NetInfo from '@react-native-community/netinfo';
 import { useUsersQuery } from './useUsersQuery';
-import { mockUsers } from '@test-utils/mockHelpers';
+import { mockUsers } from '@shared/test-utils/mockHelpers';
 
 jest.mock('axios');
 jest.mock('@react-native-community/netinfo');

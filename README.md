@@ -43,11 +43,13 @@ The project is now more maintainable and testable. The code is cleaner, there ar
 
 ## Structure
 
-- `src/constants` has colors, strings, test ids
+
 - `src/features` has app features *each feature has components, screens, utils, hooks*
 - `src/navigation` has navigation setup
-- `src/types` has TypeScript types
-- `src/test-utils` has test helpers
+- `src/shared/constants` has colors, strings, test ids
+- `src/shared/hooks` contains high-level, shared hooks for extracting data from APIs using React Query (used across multiple features, not feature-specific)
+- `src/shared/types` has TypeScript types
+- `src/shared/test-utils` has test helpers
 
 ## Tests
 

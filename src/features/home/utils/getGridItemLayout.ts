@@ -3,7 +3,7 @@ import {
   ITEM_HEIGHT,
   ITEM_MARGIN_VERTICAL,
 } from '../components/UserItem/UserItem.styles';
-import { User } from '@/types/user';
+import { User } from '@shared/types/user';
 const screenHeight = Dimensions.get('window').height;
 
 // How many columns of cards in the grid (2 cards per row)

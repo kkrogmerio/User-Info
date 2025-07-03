@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-native';
 import useUserDetailsNavigation from './useUserDetailsNavigation';
-import { mockUsers } from '@test-utils/mockHelpers';
+import { mockUsers } from '@shared/test-utils/mockHelpers';
 import SCREENS from '@navigation/screenNames';
 import { Alert } from 'react-native';
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { useNetInfo } from '@react-native-community/netinfo';
-import { User } from '@/types/user';
+import { User } from '@shared/types/user';
 import { API_BASE_URL } from '@env';
 
 const fetchUsers = async () => {

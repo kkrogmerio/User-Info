@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import { UserItem } from '.';
-import { User } from '@/types/user';
-import { TEST_IDS } from '@constants';
-import { mockUsers } from '@test-utils/mockHelpers';
+import { User } from '@shared/types/user';
+import { TEST_IDS } from '@shared/constants';
+import { mockUsers } from '@shared/test-utils/mockHelpers';
 import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
 import SCREENS from '@/navigation/screenNames';
 

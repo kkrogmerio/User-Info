@@ -1,4 +1,4 @@
-import { ACCESSIBILITY_ROLES, TEST_IDS } from '@/constants';
+import { ACCESSIBILITY_ROLES, TEST_IDS } from '@shared/constants';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '.';

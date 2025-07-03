@@ -9,11 +9,8 @@ module.exports = {
         alias: {
           '@': './src',
           '@navigation': './src/navigation',
-          '@hooks': './src/hooks',
-          '@constants': './src/constants',
-          '@types': './src/types',
           '@features': './src/features',
-          '@test-utils': './src/test-utils',
+          '@shared': './src/shared',
         },
       },
     ],

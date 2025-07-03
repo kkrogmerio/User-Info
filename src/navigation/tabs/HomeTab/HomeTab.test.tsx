@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import HomeTabNavigator from '.';
 import { NavigationContainer } from '@react-navigation/native';
-import { TEST_IDS } from '@/constants';
+import { TEST_IDS } from '@shared/constants';
 import { HOME_TAB } from './HomeTab';
 
 // Mock the stack navigator

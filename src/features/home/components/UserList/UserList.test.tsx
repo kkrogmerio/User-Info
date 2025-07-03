@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import { UsersList } from '.';
-import { TEST_IDS, ACCESSIBILITY_ROLES } from '@constants';
-import { mockUsers } from '../../../../test-utils/mockHelpers';
-import { User } from '@/types/user';
+import { TEST_IDS, ACCESSIBILITY_ROLES } from '@shared/constants';
+import { mockUsers } from '../../../../shared/test-utils/mockHelpers';
+import { User } from '@shared/types/user';
 
 // Mock the UserItem component
 jest.mock('../UserItem/index', () => {

@@ -7,13 +7,8 @@
     "paths": {
       "@/*": ["*"],
       "@navigation/*": ["navigation/*"],
-      "@hooks/*": ["hooks/*"],
-      "@services/*": ["services/*"],
-      "@constants/*": ["constants/*"],
-      "@constants": ["constants/index"], 
-      "@types/*": ["types/*"],
       "@features/*": ["features/*"],
-      "@test-utils/*": ["test-utils/*"],
+      "@shared/*": ["shared/*"],
     }
   },
   "include": ["src/**/*","env.d.ts"],

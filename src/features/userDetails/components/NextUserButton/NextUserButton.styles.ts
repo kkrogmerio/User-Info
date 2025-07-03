@@ -1,4 +1,4 @@
-import { Colors } from '@constants';
+import { Colors } from '@shared/constants';
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   screenView: { padding: 12 },

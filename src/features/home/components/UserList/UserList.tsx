@@ -1,9 +1,9 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { User } from '@/types/user';
+import { User } from '@shared/types/user';
 import { UserItem } from '../UserItem';
 import { styles } from '.';
-import { TEST_IDS, ACCESSIBILITY_ROLES } from '@constants';
+import { TEST_IDS, ACCESSIBILITY_ROLES } from '@shared/constants';
 import {
   INITIAL_ITEMS,
   getGridItemLayout,

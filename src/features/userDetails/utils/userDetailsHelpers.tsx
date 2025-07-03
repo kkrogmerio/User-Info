@@ -1,4 +1,4 @@
-import { User } from '@/types/user';
+import { User } from '@shared/types/user';
 
 export const findNextUser = (users: User[], currentUserId: string | number) => {
   const currentIndex = users.findIndex(u => u.id === currentUserId);

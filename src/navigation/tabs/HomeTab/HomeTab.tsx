@@ -4,7 +4,7 @@ import HomeStackNavigator from '@/navigation/stacks/HomeStack';
 import { tabBarStyle } from '@navigation/navigationStyles';
 import SCREENS from '@navigation/screenNames';
 import { TabBarIcon } from '../TabBarIcon';
-import { TEST_IDS } from '@/constants';
+import { TEST_IDS } from '@shared/constants';
 
 const Tab = createBottomTabNavigator();
 

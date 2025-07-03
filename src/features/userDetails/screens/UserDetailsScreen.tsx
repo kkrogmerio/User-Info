@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@/types/rootStack';
-import { ACCESSIBILITY_HINTS, Strings, TEST_IDS } from '@constants';
+import { RootStackParamList } from '@shared/types/rootStack';
+import { ACCESSIBILITY_HINTS, Strings, TEST_IDS } from '@shared/constants';
 import SCREENS from '@navigation/screenNames';
 import { styles } from './index';
 import useUserDetailsNavigation from '@/features/userDetails/hooks/useUserDetailsNavigation';
