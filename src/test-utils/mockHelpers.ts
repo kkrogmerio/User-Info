@@ -19,7 +19,25 @@ const createMockScreenProps = () => ({
 export const mockProps = createMockScreenProps();
 
 export const mockUsers: User[] = [
-  { id: 1, name: 'John', username: 'johnny', phone: '0770322112', email:'john@gmail.com' },
-  { id: 2, name: 'Jane', username: 'janny', phone: '07703232138', email:'jane@gmail.com' },
-  { id: 3, name: 'Bob', username: 'bobby', phone: '0778423941', email:'bob@gmail.com' },
+  {
+    id: 1,
+    name: 'John',
+    username: 'johnny',
+    phone: '0770322112',
+    email: 'john@gmail.com',
+  },
+  {
+    id: 2,
+    name: 'Jane',
+    username: 'janny',
+    phone: '07703232138',
+    email: 'jane@gmail.com',
+  },
+  {
+    id: 3,
+    name: 'Bob',
+    username: 'bobby',
+    phone: '0778423941',
+    email: 'bob@gmail.com',
+  },
 ];

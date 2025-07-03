@@ -14,7 +14,7 @@ const useUserDetailsNavigation = (users: User[], currentUser: User) => {
   const handleNextUserPress = useCallback(() => {
     const { nextUser, hasNextUser } = findNextUser(users, currentUser.id);
 
-    if ((hasNextUser && nextUser)) {
+    if (hasNextUser && nextUser) {
       navigate(SCREENS.UserDetails, {
         user: nextUser,
         users: users,

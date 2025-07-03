@@ -1,7 +1,7 @@
 import { Colors } from '@constants';
 import { StyleSheet } from 'react-native';
-export const ITEM_HEIGHT=120;
-export const ITEM_MARGIN_VERTICAL=9;
+export const ITEM_HEIGHT = 120;
+export const ITEM_MARGIN_VERTICAL = 9;
 const styles = StyleSheet.create({
   card: {
     backgroundColor: '#ffffff',
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 20,
     alignSelf: 'center',
-    height:ITEM_HEIGHT,
+    height: ITEM_HEIGHT,
   },
   cardContent: {
     margin: 5,

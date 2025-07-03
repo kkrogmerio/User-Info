@@ -40,22 +40,24 @@ jest.mock('@navigation/screenNames', () => ({
 }));
 
 describe('HomeTabNavigator', () => {
-    const originalConsoleError = console.error;
-beforeAll(() => {
-  console.error = (...args) => {
-    if (
-      typeof args[0] === 'string' &&
-      args[0].includes('Warning: An update to Animated(View) inside a test was not wrapped in act')
-    ) {
-      return;
-    }
-    originalConsoleError.call(console, ...args);
-  };
-});
+  const originalConsoleError = console.error;
+  beforeAll(() => {
+    console.error = (...args) => {
+      if (
+        typeof args[0] === 'string' &&
+        args[0].includes(
+          'Warning: An update to Animated(View) inside a test was not wrapped in act',
+        )
+      ) {
+        return;
+      }
+      originalConsoleError.call(console, ...args);
+    };
+  });
 
-afterAll(() => {
-  console.error = originalConsoleError;
-});
+  afterAll(() => {
+    console.error = originalConsoleError;
+  });
   it('should render the HomeStack in the tab', () => {
     const { getByText } = render(
       <NavigationContainer>

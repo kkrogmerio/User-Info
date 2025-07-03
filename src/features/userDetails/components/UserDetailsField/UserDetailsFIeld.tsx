@@ -7,14 +7,14 @@ interface UserDetailFieldProps {
   label: string;
   value: string;
   testLabelID?: string;
-  testValueID?:string;
+  testValueID?: string;
 }
 
 const UserDetailField: React.FC<UserDetailFieldProps> = ({
   label,
   value,
   testLabelID,
-  testValueID
+  testValueID,
 }) => {
   return (
     <View style={styles.container}>
@@ -24,7 +24,9 @@ const UserDetailField: React.FC<UserDetailFieldProps> = ({
         accessibilityRole={ACCESSIBILITY_ROLES.TEXT}>
         {label}
       </Text>
-      <Text style={styles.value} testID={testValueID}>{value}</Text>
+      <Text style={styles.value} testID={testValueID}>
+        {value}
+      </Text>
     </View>
   );
 };

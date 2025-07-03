@@ -1,4 +1,4 @@
-import {  ROW_HEIGHT, getGridItemLayout } from './getGridItemLayout';
+import { ROW_HEIGHT, getGridItemLayout } from './getGridItemLayout';
 
 describe('getGridItemLayout', () => {
   it('should return correct layout for the first item (index 0)', () => {

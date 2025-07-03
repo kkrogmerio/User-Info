@@ -20,7 +20,9 @@ const originalConsoleError = console.error;
 console.error = (...args) => {
   const message = typeof args[0] === 'string' ? args[0] : '';
   if (
-    message.includes('Warning: An update to Animated(View) inside a test was not wrapped in act') ||
+    message.includes(
+      'Warning: An update to Animated(View) inside a test was not wrapped in act',
+    ) ||
     message.includes('act(...)') ||
     message.includes('Animated(View)')
   ) {

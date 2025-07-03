@@ -5,9 +5,7 @@ import { User } from '@/types/user';
 import { API_BASE_URL } from '@env';
 
 const fetchUsers = async () => {
-  const { data } = await axios.get<User[]>(
-    `${API_BASE_URL}/users`,
-  );
+  const { data } = await axios.get<User[]>(`${API_BASE_URL}/users`);
   return data;
 };
 

@@ -4,7 +4,10 @@ import { User } from '@/types/user';
 import { UserItem } from '../UserItem';
 import { styles } from '.';
 import { TEST_IDS, ACCESSIBILITY_ROLES } from '@constants';
-import { INITIAL_ITEMS, getGridItemLayout } from '../../utils/getGridItemLayout';
+import {
+  INITIAL_ITEMS,
+  getGridItemLayout,
+} from '../../utils/getGridItemLayout';
 
 interface UsersListProps {
   data: User[];

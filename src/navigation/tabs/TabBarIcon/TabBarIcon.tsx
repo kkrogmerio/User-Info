@@ -12,12 +12,5 @@ export const TabBarIcon: React.FC<TabBarIconProps> = ({
   icon,
   color,
   size = 36,
-  testID
-}) => (
-  <Icon
-    name={icon}
-    size={size}
-    color={color}
-    testID={testID}
-  />
-);
+  testID,
+}) => <Icon name={icon} size={size} color={color} testID={testID} />;
