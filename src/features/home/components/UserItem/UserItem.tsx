@@ -1,11 +1,10 @@
 import React, { memo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { User } from '@shared/types/user';
 import styles from './UserItem.styles';
 import { ACCESSIBILITY_ROLES, TEST_IDS } from '@shared/constants';
 import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@shared/types/rootStack';
+import { RootStackParamList, User } from '@shared/types';
 import { useNavigation } from '@react-navigation/native';
 import SCREENS from '@/navigation/screenNames';
 type UserItemProps = {

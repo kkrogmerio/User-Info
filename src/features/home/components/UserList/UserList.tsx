@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { User } from '@shared/types/user';
+import { User } from '@shared/types';
 import { UserItem } from '../UserItem';
 import { styles } from '.';
 import { TEST_IDS, ACCESSIBILITY_ROLES } from '@shared/constants';

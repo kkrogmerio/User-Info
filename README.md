@@ -47,7 +47,8 @@ The project is now more maintainable and testable. The code is cleaner, there ar
 - `src/features` has app features *each feature has components, screens, utils, hooks*
 - `src/navigation` has navigation setup
 - `src/shared/constants` has colors, strings, test ids
-- `src/shared/hooks` contains high-level, shared hooks for extracting data from APIs using React Query (used across multiple features, not feature-specific)
+- `src/shared/hooks` contains high-level, shared hooks for managing data with React Query (used across multiple features, not feature-specific)
+- `src/services/' contains services responsible for making API calls
 - `src/shared/types` has TypeScript types
 - `src/shared/test-utils` has test helpers
 

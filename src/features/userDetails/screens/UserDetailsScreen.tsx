@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@shared/types/rootStack';
+import { RootStackParamList } from '@shared/types';
 import { ACCESSIBILITY_HINTS, Strings, TEST_IDS } from '@shared/constants';
 import SCREENS from '@navigation/screenNames';
 import { styles } from './index';
