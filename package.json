@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --watchAll --detectOpenHandles",
     "test:cov": "jest --watchAll --detectOpenHandles --coverage",
     "preinstall": "npx npm-force-resolutions"
   },
