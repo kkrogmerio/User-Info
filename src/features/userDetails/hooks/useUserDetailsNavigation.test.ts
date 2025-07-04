@@ -1,8 +1,11 @@
-import { renderHook } from '@testing-library/react-native';
-import useUserDetailsNavigation from './useUserDetailsNavigation';
-import { mockUsers } from '@shared/test-utils/mockHelpers';
-import SCREENS from '@navigation/screenNames';
 import { Alert } from 'react-native';
+
+import { renderHook } from '@testing-library/react-native';
+
+import SCREENS from '@navigation/screenNames';
+import { mockUsers } from '@shared/test-utils/mockHelpers';
+
+import useUserDetailsNavigation from './useUserDetailsNavigation';
 
 // Mock navigation
 const mockNavigate = jest.fn();

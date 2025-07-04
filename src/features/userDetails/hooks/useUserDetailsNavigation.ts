@@ -1,11 +1,15 @@
 import { useCallback } from 'react';
+
 import { Alert } from 'react-native';
-import { Strings } from '@shared/constants';
-import { findNextUser } from '../utils/userDetailsHelpers';
-import SCREENS from '@/navigation/screenNames';
+
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import SCREENS from '@/navigation/screenNames';
+import { Strings } from '@shared/constants';
 import { RootStackParamList, User } from '@shared/types';
+
+import { findNextUser } from '../utils/userDetailsHelpers';
 
 const useUserDetailsNavigation = (users: User[], currentUser: User) => {
   const { navigate } =

@@ -1,5 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
 import { useNetInfo } from '@react-native-community/netinfo';
+import { useQuery } from '@tanstack/react-query';
+
 import { fetchUsers } from '@shared/services';
 
 export const useUsersQuery = () => {

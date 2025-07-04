@@ -1,8 +1,13 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+
 import { StatusBar } from 'react-native';
-import HomeTab from '../tabs/HomeTab';
+
+import { NavigationContainer } from '@react-navigation/native';
+
 import { Colors } from '@shared/constants';
+
+import HomeTab from '../tabs/HomeTab';
+
 const AppNavigator = () => {
   return (
     <NavigationContainer>

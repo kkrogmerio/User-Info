@@ -1,13 +1,16 @@
 import React from 'react';
+
 import { FlatList } from 'react-native';
-import { User } from '@shared/types';
-import { UserItem } from '../UserItem';
-import { styles } from '.';
+
 import { TEST_IDS, ACCESSIBILITY_ROLES } from '@shared/constants';
+import { User } from '@shared/types';
+
+import { styles } from '.';
 import {
   INITIAL_ITEMS,
   getGridItemLayout,
 } from '../../utils/getGridItemLayout';
+import { UserItem } from '../UserItem';
 
 interface UsersListProps {
   data: User[];

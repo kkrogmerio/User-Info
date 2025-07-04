@@ -1,10 +1,13 @@
 import React from 'react';
-import { renderHook, waitFor } from '@testing-library/react-native';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import { useNetInfo } from '@react-native-community/netinfo';
-import { fetchUsers } from '../services/fetchUsers';
-import { useUsersQuery } from './useUsersQuery';
-import { mockUsers } from '../test-utils/mockHelpers';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { renderHook, waitFor } from '@testing-library/react-native';
+
+import { fetchUsers } from '@shared/services/fetchUsers';
+import { mockUsers } from '@shared/test-utils/mockHelpers';
+
+import { useUsersQuery } from '.';
 
 jest.mock('../services/fetchUsers');
 jest.mock('@react-native-community/netinfo');
@@ -28,7 +31,7 @@ describe('useUsersQuery', () => {
     jest.clearAllMocks();
   });
   afterEach(() => {
-    queryClient.clear(); 
+    queryClient.clear();
   });
 
   it('should fetch users when network is connected', async () => {

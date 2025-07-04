@@ -1,7 +1,9 @@
-import axios from 'axios';
-import { fetchUsers } from './fetchUsers';
 import { API_BASE_URL } from '@env';
+import axios from 'axios';
+
 import { mockUsers } from '@shared/test-utils/mockHelpers';
+
+import { fetchUsers } from '.';
 
 jest.mock('axios');
 const mockedAxiosGet = axios.get as jest.Mock;

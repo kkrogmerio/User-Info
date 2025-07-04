@@ -1,8 +1,11 @@
 // TabBarIcon.test.tsx
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
-import { TabBarIcon } from '.';
+
 import { TEST_IDS } from '@shared/constants';
+
+import { TabBarIcon } from '.';
 
 jest.mock('react-native-vector-icons/MaterialCommunityIcons', () => {
   const { View } = require('react-native');

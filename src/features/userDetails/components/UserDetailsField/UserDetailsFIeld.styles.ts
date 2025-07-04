@@ -1,5 +1,6 @@
-import { Colors } from '@shared/constants';
 import { StyleSheet } from 'react-native';
+
+import { Colors } from '@shared/constants';
 
 const styles = StyleSheet.create({
   label: {

@@ -1,11 +1,14 @@
 import React from 'react';
+
+import { RouteProp } from '@react-navigation/native';
 import { render, fireEvent } from '@testing-library/react-native';
-import { UserDetailsScreen } from '.';
+
+import SCREENS from '@/navigation/screenNames';
 import { ACCESSIBILITY_HINTS, TEST_IDS } from '@shared/constants';
 import { mockProps, mockUsers } from '@shared/test-utils/mockHelpers';
 import { RootStackParamList, User } from '@shared/types';
-import SCREENS from '@/navigation/screenNames';
-import { RouteProp } from '@react-navigation/native';
+
+import { UserDetailsScreen } from '.';
 
 // Mock navigation route params
 const mockUser: User = {

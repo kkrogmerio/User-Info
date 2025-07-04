@@ -1,11 +1,14 @@
 import React from 'react';
+
 import { render, fireEvent } from '@testing-library/react-native';
-import { UserItem } from '.';
-import { User } from '@shared/types';
+
+import SCREENS from '@/navigation/screenNames';
+import { userAccessibilityLabel } from '@features/home/utils/userAccessibilityLabel';
 import { TEST_IDS } from '@shared/constants';
 import { mockUsers } from '@shared/test-utils/mockHelpers';
-import { userAccessibilityLabel } from '../../utils/userAccessibilityLabel';
-import SCREENS from '@/navigation/screenNames';
+import { User } from '@shared/types';
+
+import { UserItem } from '.';
 
 // 1. Mock useNavigation from @react-navigation/native
 const mockNavigate = jest.fn();

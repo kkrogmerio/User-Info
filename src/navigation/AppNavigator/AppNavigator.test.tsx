@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
+
 import AppNavigator from '@navigation/AppNavigator/AppNavigator';
 const MOCK_TEST_IDS = {
   HOME_TAB: 'HOME_TAB',

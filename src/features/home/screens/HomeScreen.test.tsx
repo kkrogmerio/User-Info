@@ -1,10 +1,13 @@
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
-import { HomeScreen } from '.';
-import { useUsersQuery } from '@shared/hooks';
-import { User } from '@shared/types';
-import { mockProps, mockUsers } from '@shared/test-utils/mockHelpers';
+
 import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@shared/constants';
+import { useUsersQuery } from '@shared/hooks';
+import { mockProps, mockUsers } from '@shared/test-utils/mockHelpers';
+import { User } from '@shared/types';
+
+import { HomeScreen } from '.';
 
 jest.mock('@shared/hooks');
 

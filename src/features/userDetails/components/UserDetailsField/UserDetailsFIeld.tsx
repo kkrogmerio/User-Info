@@ -1,6 +1,9 @@
-import { ACCESSIBILITY_ROLES } from '@shared/constants';
 import React from 'react';
+
 import { Text, View } from 'react-native';
+
+import { ACCESSIBILITY_ROLES } from '@shared/constants';
+
 import { styles } from '.';
 
 interface UserDetailFieldProps {

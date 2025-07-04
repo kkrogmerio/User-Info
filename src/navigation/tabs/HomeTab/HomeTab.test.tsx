@@ -1,14 +1,19 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
-import HomeTabNavigator from '.';
+
 import { NavigationContainer } from '@react-navigation/native';
+import { render } from '@testing-library/react-native';
+
 import { TEST_IDS } from '@shared/constants';
+
+import HomeTabNavigator from '.';
 import { HOME_TAB } from './HomeTab';
+
+const HOME_STACK_MOCK = 'HomeStackMock';
 
 // Mock the stack navigator
 jest.mock('@/navigation/stacks/HomeStack', () => () => {
   const { Text } = require('react-native');
-  return <Text>HomeStackMock</Text>;
+  return <Text>{HOME_STACK_MOCK}</Text>;
 });
 
 // Mock the icon component
@@ -64,7 +69,7 @@ describe('HomeTabNavigator', () => {
         <HomeTabNavigator />
       </NavigationContainer>,
     );
-    expect(getByText('HomeStackMock')).toBeTruthy();
+    expect(getByText(HOME_STACK_MOCK)).toBeTruthy();
   });
 
   it('should render the tab bar icon with correct testID and icon name', () => {

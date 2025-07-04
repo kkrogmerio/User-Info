@@ -1,5 +1,6 @@
-import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
+import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
+
 import { Colors } from '@shared/constants';
 export const tabBarStyle: BottomTabNavigationOptions = {
   tabBarActiveTintColor: Colors.primary,

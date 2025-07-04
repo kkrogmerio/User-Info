@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
-import { MessageView } from '.';
+
 import { ACCESSIBILITY_ROLES, Strings } from '@shared/constants';
+
+import { MessageView } from '.';
 
 describe('MessageView', () => {
   it('should show the message', () => {

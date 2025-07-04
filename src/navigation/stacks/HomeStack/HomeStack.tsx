@@ -1,13 +1,15 @@
 import React from 'react';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { HomeScreen } from '@features/home/screens';
 import { UserDetailsScreen } from '@features/userDetails/screens';
-import { RootStackParamList } from '@shared/types';
 import {
   stackHeaderStyle,
   userDetailsScreenStyle,
 } from '@navigation/navigationStyles';
 import SCREENS from '@navigation/screenNames';
+import { RootStackParamList } from '@shared/types';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => (

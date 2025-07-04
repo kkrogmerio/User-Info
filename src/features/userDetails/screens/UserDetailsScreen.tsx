@@ -1,13 +1,18 @@
 import React from 'react';
+
 import { View } from 'react-native';
+
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@shared/types';
-import { ACCESSIBILITY_HINTS, Strings, TEST_IDS } from '@shared/constants';
-import SCREENS from '@navigation/screenNames';
-import { styles } from './index';
+
 import useUserDetailsNavigation from '@/features/userDetails/hooks/useUserDetailsNavigation';
-import { UserDetailField } from '../components/UserDetailsField';
+import SCREENS from '@navigation/screenNames';
+import { ACCESSIBILITY_HINTS, Strings, TEST_IDS } from '@shared/constants';
+import { RootStackParamList } from '@shared/types';
+
+import { styles } from './index';
 import { NextUserButton } from '../components/NextUserButton';
+import { UserDetailField } from '../components/UserDetailsField';
+
 type UserDetailsScreenProps = NativeStackScreenProps<
   RootStackParamList,
   SCREENS.UserDetails

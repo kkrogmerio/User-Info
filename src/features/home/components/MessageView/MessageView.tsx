@@ -1,7 +1,10 @@
 import React, { memo } from 'react';
+
 import { View, Text } from 'react-native';
-import styles from './MessageView.style';
+
 import { ACCESSIBILITY_ROLES } from '@shared/constants';
+
+import styles from './MessageView.style';
 interface Props {
   message: string;
   testID?: string;

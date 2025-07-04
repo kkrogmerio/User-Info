@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { render } from '@testing-library/react-native';
-import { UserDetailField } from '.';
+
 import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@shared/constants';
+
+import { UserDetailField } from '.';
 
 describe('UserDetailField', () => {
   const label = Strings.user.email;

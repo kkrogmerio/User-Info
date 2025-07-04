@@ -1,6 +1,9 @@
-import { ACCESSIBILITY_ROLES, TEST_IDS } from '@shared/constants';
 import React from 'react';
+
 import { Text, TouchableOpacity, View } from 'react-native';
+
+import { ACCESSIBILITY_ROLES, TEST_IDS } from '@shared/constants';
+
 import { styles } from '.';
 
 interface NextUserButtonProps {

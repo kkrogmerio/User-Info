@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
-import HomeStackNavigator from './HomeStack';
+
 import { NavigationContainer } from '@react-navigation/native';
+import { render } from '@testing-library/react-native';
+
 import SCREENS from '@/navigation/screenNames';
 import { mockUsers } from '@shared/test-utils/mockHelpers';
+
+import HomeStackNavigator from './HomeStack';
+
 jest.mock('@features/home/screens', () => {
   const { Text } = require('react-native');
   return {

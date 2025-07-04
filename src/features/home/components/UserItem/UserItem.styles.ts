@@ -1,5 +1,6 @@
-import { Colors } from '@shared/constants';
 import { StyleSheet } from 'react-native';
+
+import { Colors } from '@shared/constants';
 export const ITEM_HEIGHT = 120;
 export const ITEM_MARGIN_VERTICAL = 9;
 const styles = StyleSheet.create({

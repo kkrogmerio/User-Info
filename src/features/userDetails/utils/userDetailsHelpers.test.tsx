@@ -1,4 +1,5 @@
 import { mockUsers } from '@shared/test-utils/mockHelpers';
+
 import { findNextUser } from './userDetailsHelpers';
 
 describe('findNextUser', () => {

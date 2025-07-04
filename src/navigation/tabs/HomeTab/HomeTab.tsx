@@ -1,10 +1,13 @@
 import React from 'react';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import HomeStackNavigator from '@/navigation/stacks/HomeStack';
 import { tabBarStyle } from '@navigation/navigationStyles';
 import SCREENS from '@navigation/screenNames';
-import { TabBarIcon } from '../TabBarIcon';
 import { TEST_IDS } from '@shared/constants';
+
+import { TabBarIcon } from '../TabBarIcon';
 
 const Tab = createBottomTabNavigator();
 

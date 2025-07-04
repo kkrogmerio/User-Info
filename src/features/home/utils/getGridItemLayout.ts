@@ -1,9 +1,11 @@
 import { Dimensions } from 'react-native';
+
+import { User } from '@shared/types';
+
 import {
   ITEM_HEIGHT,
   ITEM_MARGIN_VERTICAL,
 } from '../components/UserItem/UserItem.styles';
-import { User } from '@shared/types';
 const screenHeight = Dimensions.get('window').height;
 
 // How many columns of cards in the grid (2 cards per row)
