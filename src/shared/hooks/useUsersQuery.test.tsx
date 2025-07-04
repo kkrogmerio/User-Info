@@ -31,7 +31,7 @@ describe('useUsersQuery', () => {
     queryClient.clear(); 
   });
 
-  it('fetches users when network is connected', async () => {
+  it('should fetch users when network is connected', async () => {
     mockedFetchUsers.mockResolvedValue(mockUsers);
     mockedUseNetInfo.mockReturnValue({ isConnected: true });
 
@@ -45,7 +45,7 @@ describe('useUsersQuery', () => {
     expect(result.current.data).toEqual(mockUsers);
   });
 
-  it('does NOT fetch users when network is disconnected and be in pending', async () => {
+  it('should NOT fetch users when network is disconnected and be in pending', async () => {
     mockedUseNetInfo.mockReturnValue({ isConnected: false });
 
     const { result } = renderHook(() => useUsersQuery(), {
@@ -56,7 +56,7 @@ describe('useUsersQuery', () => {
     expect(result.current.status).toEqual('pending');
   });
 
-  it('handles errors from fetchUsers', async () => {
+  it('should handle errors from fetchUsers', async () => {
     const API_ERROR = 'API ERROR';
     mockedFetchUsers.mockRejectedValue(new Error(API_ERROR));
     mockedUseNetInfo.mockReturnValue({ isConnected: true });

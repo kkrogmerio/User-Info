@@ -7,13 +7,13 @@ jest.mock('axios');
 const mockedAxiosGet = axios.get as jest.Mock;
 
 describe('fetchUsers', () => {
-  it('returns user data successfully', async () => {
+  it('should return user data successfully', async () => {
     mockedAxiosGet.mockResolvedValue({ data: mockUsers });
     const users = await fetchUsers();
     expect(mockedAxiosGet).toHaveBeenCalledWith(`${API_BASE_URL}/users`);
     expect(users).toEqual(mockUsers);
   });
-  it('returns user data successfully', async () => {
+  it('should return error when fetch user data unsuccessfully', async () => {
     const errorMessage = 'Network Error';
     mockedAxiosGet.mockRejectedValue(new Error(errorMessage));
     await expect(fetchUsers()).rejects.toThrow(errorMessage);
