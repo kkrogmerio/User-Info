@@ -66,52 +66,47 @@ describe('UserItem Component', () => {
     });
   });
 
-  describe('User Interaction', () => {
-    it('should call navigate with correct params when card is pressed', () => {
-      const { getByTestId } = render(
-        <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
-      );
+  it('should call navigate with correct params when card is pressed', () => {
+    const { getByTestId } = render(
+      <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
+    );
 
-      const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
-      fireEvent.press(card);
+    const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
+    fireEvent.press(card);
 
-      expect(mockNavigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
-        user: mockCurrentUser,
-        users: mockUsers,
-      });
+    expect(mockNavigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
+      user: mockCurrentUser,
+      users: mockUsers,
     });
   });
 
-  describe('Props Validation', () => {
-    it('should call navigate with a single user in the array', () => {
-      const singleUserArray = [mockCurrentUser];
+  it('should call navigate with a single user in the array', () => {
+    const singleUserArray = [mockCurrentUser];
 
-      const { getByTestId } = render(
-        <UserItem currentUser={mockCurrentUser} users={singleUserArray} />,
-      );
+    const { getByTestId } = render(
+      <UserItem currentUser={mockCurrentUser} users={singleUserArray} />,
+    );
 
-      const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
-      fireEvent.press(card);
+    const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
+    fireEvent.press(card);
 
-      expect(mockNavigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
-        user: mockCurrentUser,
-        users: singleUserArray,
-      });
+    expect(mockNavigate).toHaveBeenCalledWith(SCREENS.UserDetails, {
+      user: mockCurrentUser,
+      users: singleUserArray,
     });
   });
-  describe('Accessibility', () => {
-    it('should have accessibilityRole "button" and correct accessibilityLabel', () => {
-      const { getByTestId } = render(
-        <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
-      );
 
-      const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
-      // Check role
-      expect(card.props.accessibilityRole).toBe('button');
-      // Check label
-      expect(card.props.accessibilityLabel).toBe(
-        userAccessibilityLabel(mockCurrentUser.name, mockCurrentUser.username),
-      );
-    });
+  it('should have accessibilityRole "button" and correct accessibilityLabel', () => {
+    const { getByTestId } = render(
+      <UserItem currentUser={mockCurrentUser} users={mockUsers} />,
+    );
+
+    const card = getByTestId(TEST_IDS.USER_ITEM.CARD);
+    // Check role
+    expect(card.props.accessibilityRole).toBe('button');
+    // Check label
+    expect(card.props.accessibilityLabel).toBe(
+      userAccessibilityLabel(mockCurrentUser.name, mockCurrentUser.username),
+    );
   });
 });
