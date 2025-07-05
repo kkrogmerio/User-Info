@@ -1,5 +1,4 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
-import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
 import { Colors, Strings } from '@shared/constants';
 export const tabBarStyle: BottomTabNavigationOptions = {
@@ -28,23 +27,4 @@ export const tabBarStyle: BottomTabNavigationOptions = {
 export const homeTabConfig: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarLabel: Strings.tabLabels.home,
-};
-export const stackHeaderStyle: NativeStackNavigationOptions = {
-  headerStyle: {
-    backgroundColor: Colors.primary,
-  },
-  headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  },
-  headerTitleAlign: 'center',
-};
-export const userDetailsScreenStyle: NativeStackNavigationOptions = {
-  headerStyle: {
-    backgroundColor: Colors.primary,
-  },
-  headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  },
 };

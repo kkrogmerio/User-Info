@@ -3,9 +3,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeStackNavigator from '@/navigation/stacks/HomeStack';
-import { homeTabConfig, tabBarStyle } from '@navigation/navigationStyles';
 import SCREENS from '@navigation/screenNames';
 
+import { homeTabConfig, tabBarStyle } from '.';
 import { HomeTabIcon } from '.';
 
 const Tab = createBottomTabNavigator();

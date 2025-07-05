@@ -36,14 +36,6 @@ jest.mock('../TabBarIcon', () => ({
   },
 }));
 
-jest.mock('@navigation/navigationStyles', () => ({
-  tabBarStyle: {},
-}));
-
-jest.mock('@navigation/screenNames', () => ({
-  HomeTab: 'HomeTab',
-}));
-
 describe('HomeTabNavigator', () => {
   const originalConsoleError = console.error;
   beforeAll(() => {

@@ -4,12 +4,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ListUsersScreen } from '@/features/listUsers/screens';
 import { UserDetailsScreen } from '@features/userDetails/screens';
-import {
-  stackHeaderStyle,
-  userDetailsScreenStyle,
-} from '@navigation/navigationStyles';
 import SCREENS from '@navigation/screenNames';
 import { RootStackParamList } from '@shared/types';
+
+import { stackHeaderStyle, userDetailsScreenStyle } from '.';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => (
