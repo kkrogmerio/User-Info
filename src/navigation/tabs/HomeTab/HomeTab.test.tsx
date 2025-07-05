@@ -6,7 +6,7 @@ import { render } from '@testing-library/react-native';
 import { TEST_IDS } from '@shared/constants';
 
 import HomeTabNavigator from '.';
-import { HOME_TAB } from './HomeTab';
+import { HOME_TAB_ICON } from './HomeTabIcon';
 
 const HOME_STACK_MOCK = 'HomeStackMock';
 
@@ -81,7 +81,7 @@ describe('HomeTabNavigator', () => {
     const icons = getAllByTestId(TEST_IDS.HOME_TAB.ICON);
     expect(icons.length).toBeGreaterThan(0);
     expect(
-      icons.some(icon => String(icon.props.children).includes(HOME_TAB.icon)),
+      icons.some(icon => String(icon.props.children).includes(HOME_TAB_ICON)),
     ).toBe(true);
   });
 });

@@ -1,7 +1,7 @@
 import { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
-import { Colors } from '@shared/constants';
+import { Colors, Strings } from '@shared/constants';
 export const tabBarStyle: BottomTabNavigationOptions = {
   tabBarActiveTintColor: Colors.primary,
   tabBarLabelStyle: {
@@ -25,7 +25,10 @@ export const tabBarStyle: BottomTabNavigationOptions = {
   },
   tabBarShowLabel: true,
 };
-
+export const homeTabConfig: BottomTabNavigationOptions = {
+  headerShown: false,
+  tabBarLabel: Strings.tabLabels.home,
+};
 export const stackHeaderStyle: NativeStackNavigationOptions = {
   headerStyle: {
     backgroundColor: Colors.primary,

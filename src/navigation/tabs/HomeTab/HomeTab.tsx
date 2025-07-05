@@ -3,26 +3,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeStackNavigator from '@/navigation/stacks/HomeStack';
-import { tabBarStyle } from '@navigation/navigationStyles';
+import { homeTabConfig, tabBarStyle } from '@navigation/navigationStyles';
 import SCREENS from '@navigation/screenNames';
-import { TEST_IDS } from '@shared/constants';
 
-import { TabBarIcon } from '../TabBarIcon';
+import { HomeTabIcon } from '.';
 
 const Tab = createBottomTabNavigator();
-
-export const HOME_TAB = {
-  label: 'Home',
-  icon: 'home-outline',
-} as const;
-
-const HomeTabIcon = ({ color }: { color: string }) => (
-  <TabBarIcon
-    icon={HOME_TAB.icon}
-    color={color}
-    testID={TEST_IDS.HOME_TAB.ICON}
-  />
-);
 
 const HomeTabNavigator = () => (
   <Tab.Navigator
@@ -33,7 +19,7 @@ const HomeTabNavigator = () => (
     <Tab.Screen
       name={SCREENS.HomeTab}
       component={HomeStackNavigator}
-      options={{ headerShown: false, tabBarLabel: HOME_TAB.label }}
+      options={homeTabConfig}
     />
   </Tab.Navigator>
 );
