@@ -39,10 +39,10 @@ describe('TabBarIcon', () => {
         icon={ICON_HOME}
         color={COLOR_RED}
         size={SIZE_24}
-        testID={TEST_IDS.HOME_SCREEN.HOME_ICON}
+        testID={TEST_IDS.HOME_TAB.ICON}
       />,
     );
-    const icon = getByTestId(TEST_IDS.HOME_SCREEN.HOME_ICON);
+    const icon = getByTestId(TEST_IDS.HOME_TAB.ICON);
     const childrenString = Array.isArray(icon.props.children)
       ? icon.props.children.join('')
       : icon.props.children;
@@ -57,10 +57,10 @@ describe('TabBarIcon', () => {
       <TabBarIcon
         icon={ICON_ACCOUNT}
         color={COLOR_BLUE}
-        testID={TEST_IDS.HOME_SCREEN.HOME_ICON}
+        testID={TEST_IDS.HOME_TAB.ICON}
       />,
     );
-    const icon = getByTestId(TEST_IDS.HOME_SCREEN.HOME_ICON);
+    const icon = getByTestId(TEST_IDS.HOME_TAB.ICON);
     const childrenString = Array.isArray(icon.props.children)
       ? icon.props.children.join('')
       : icon.props.children;

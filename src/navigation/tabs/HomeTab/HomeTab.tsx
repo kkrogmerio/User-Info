@@ -20,7 +20,7 @@ const HomeTabIcon = ({ color }: { color: string }) => (
   <TabBarIcon
     icon={HOME_TAB.icon}
     color={color}
-    testID={TEST_IDS.HOME_SCREEN.HOME_ICON}
+    testID={TEST_IDS.HOME_TAB.ICON}
   />
 );
 

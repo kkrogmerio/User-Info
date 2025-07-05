@@ -11,7 +11,7 @@ const createMockScreenProps = () => ({
     setOptions: jest.fn(),
   } as any,
   route: {
-    name: SCREENS.Home,
+    name: SCREENS.ListUsers,
     params: undefined,
   } as any,
 });

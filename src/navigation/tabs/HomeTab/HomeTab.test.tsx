@@ -78,7 +78,7 @@ describe('HomeTabNavigator', () => {
         <HomeTabNavigator />
       </NavigationContainer>,
     );
-    const icons = getAllByTestId(TEST_IDS.HOME_SCREEN.HOME_ICON);
+    const icons = getAllByTestId(TEST_IDS.HOME_TAB.ICON);
     expect(icons.length).toBeGreaterThan(0);
     expect(
       icons.some(icon => String(icon.props.children).includes(HOME_TAB.icon)),

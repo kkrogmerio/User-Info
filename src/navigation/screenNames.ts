@@ -1,5 +1,5 @@
 enum SCREENS {
-  Home = 'Home',
+  ListUsers = 'ListUsers',
   UserDetails = 'UserDetails',
   HomeTab = 'HomeTab',
 }

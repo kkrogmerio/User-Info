@@ -7,11 +7,11 @@ import SCREENS from '@/navigation/screenNames';
 import { mockUsers } from '@shared/test-utils/mockHelpers';
 
 import HomeStackNavigator from './HomeStack';
-
-jest.mock('@features/home/screens', () => {
+const MockListUsers = 'MockListUsers';
+jest.mock('@features/listUsers/screens', () => {
   const { Text } = require('react-native');
   return {
-    HomeScreen: () => <Text>HomeScreenMock</Text>,
+    ListUsersScreen: () => <Text>{MockListUsers}</Text>,
   };
 });
 
@@ -29,7 +29,7 @@ describe('UsersStackNavigator', () => {
         <HomeStackNavigator />
       </NavigationContainer>,
     );
-    expect(getByText('HomeScreenMock')).toBeTruthy();
+    expect(getByText(MockListUsers)).toBeTruthy();
   });
 
   it('should UserDetailsScreen options uses the user name and styles', () => {

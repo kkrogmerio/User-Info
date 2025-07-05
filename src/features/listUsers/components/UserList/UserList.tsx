@@ -38,7 +38,7 @@ const UsersList: React.FC<UsersListProps> = ({ data, testID }) => {
       contentContainerStyle={styles.contentContainer}
       numColumns={2}
       showsVerticalScrollIndicator={false}
-      testID={testID ?? `${TEST_IDS.LIST_USERS}`}
+      testID={testID ?? `${TEST_IDS.USERS_LIST}`}
       accessibilityRole={ACCESSIBILITY_ROLES.LIST}
     />
   );

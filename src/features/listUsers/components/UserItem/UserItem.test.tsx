@@ -2,8 +2,8 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react-native';
 
+import { userAccessibilityLabel } from '@/features/listUsers/utils/userAccessibilityLabel';
 import SCREENS from '@/navigation/screenNames';
-import { userAccessibilityLabel } from '@features/home/utils/userAccessibilityLabel';
 import { TEST_IDS } from '@shared/constants';
 import { mockUsers } from '@shared/test-utils/mockHelpers';
 import { User } from '@shared/types';

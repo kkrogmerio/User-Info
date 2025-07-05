@@ -7,7 +7,7 @@ import { useUsersQuery } from '@shared/hooks';
 import { mockProps, mockUsers } from '@shared/test-utils/mockHelpers';
 import { User } from '@shared/types';
 
-import { HomeScreen } from '.';
+import { ListUsersScreen } from '.';
 
 jest.mock('@shared/hooks');
 
@@ -55,7 +55,7 @@ const mockUseUsersQuery = useUsersQuery as jest.MockedFunction<
   typeof useUsersQuery
 >;
 
-//Create mock only for property used in HomeScreen.tsx by the useUsersQuery hook (data,isLoading and error)
+//Create mock only for property used in ListUsersScreen.tsx by the useUsersQuery hook (data,isLoading and error)
 const createMockQueryResult = (
   data: User[] | undefined,
   isLoading: boolean,
@@ -67,7 +67,7 @@ const createMockQueryResult = (
     error,
   } as ReturnType<typeof useUsersQuery>);
 
-describe('HomeScreen', () => {
+describe('ListUsersScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -77,9 +77,11 @@ describe('HomeScreen', () => {
       createMockQueryResult(undefined, true, null),
     );
 
-    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(
+      <ListUsersScreen {...mockProps} />,
+    );
 
-    expect(getByTestId(TEST_IDS.HOME_SCREEN.LOADING_MESSAGE)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.LIST_USERS.LOADING_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.fetchDataStatus.loading)).toBeTruthy();
   });
 
@@ -92,18 +94,22 @@ describe('HomeScreen', () => {
       ),
     );
 
-    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(
+      <ListUsersScreen {...mockProps} />,
+    );
 
-    expect(getByTestId(TEST_IDS.HOME_SCREEN.ERROR_MESSAGE)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.LIST_USERS.ERROR_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.fetchDataStatus.errorFetching)).toBeTruthy();
   });
 
   it('should show no users message when data is empty', () => {
     mockUseUsersQuery.mockReturnValue(createMockQueryResult([], false, null));
 
-    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(
+      <ListUsersScreen {...mockProps} />,
+    );
 
-    expect(getByTestId(TEST_IDS.HOME_SCREEN.NO_USERS_MESSAGE)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.LIST_USERS.NO_USERS_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.noUsers)).toBeTruthy();
   });
 
@@ -112,9 +118,11 @@ describe('HomeScreen', () => {
       createMockQueryResult(undefined, false, null),
     );
 
-    const { getByTestId, getByText } = render(<HomeScreen {...mockProps} />);
+    const { getByTestId, getByText } = render(
+      <ListUsersScreen {...mockProps} />,
+    );
 
-    expect(getByTestId(TEST_IDS.HOME_SCREEN.NO_USERS_MESSAGE)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.LIST_USERS.NO_USERS_MESSAGE)).toBeTruthy();
     expect(getByText(Strings.noUsers)).toBeTruthy();
   });
 
@@ -123,11 +131,11 @@ describe('HomeScreen', () => {
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const { getByTestId } = render(<HomeScreen {...mockProps} />);
+    const { getByTestId } = render(<ListUsersScreen {...mockProps} />);
 
-    expect(getByTestId(TEST_IDS.HOME_SCREEN.CONTAINER)).toBeTruthy();
-    expect(getByTestId(TEST_IDS.HOME_SCREEN.TITLE)).toBeTruthy();
-    expect(getByTestId(TEST_IDS.LIST_USERS)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.LIST_USERS.CONTAINER)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.LIST_USERS.TITLE)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.USERS_LIST)).toBeTruthy();
   });
 
   it('should pass correct data to UsersList', () => {
@@ -135,9 +143,9 @@ describe('HomeScreen', () => {
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const { getByTestId } = render(<HomeScreen {...mockProps} />);
+    const { getByTestId } = render(<ListUsersScreen {...mockProps} />);
 
-    expect(getByTestId(TEST_IDS.LIST_USERS)).toBeTruthy();
+    expect(getByTestId(TEST_IDS.USERS_LIST)).toBeTruthy();
     expect(getByTestId(`user-${mockUsers[0].id}`)).toBeTruthy();
     expect(getByTestId(`user-${mockUsers[1].id}`)).toBeTruthy();
     expect(getByTestId(`user-${mockUsers[2].id}`)).toBeTruthy();
@@ -148,8 +156,8 @@ describe('HomeScreen', () => {
       createMockQueryResult(mockUsers, false, null),
     );
 
-    const { getByTestId } = render(<HomeScreen {...mockProps} />);
-    const title = getByTestId(TEST_IDS.HOME_SCREEN.TITLE);
+    const { getByTestId } = render(<ListUsersScreen {...mockProps} />);
+    const title = getByTestId(TEST_IDS.LIST_USERS.TITLE);
     expect(title).toBeTruthy();
     expect(title.props.accessibilityRole).toBe(ACCESSIBILITY_ROLES.HEADER);
   });

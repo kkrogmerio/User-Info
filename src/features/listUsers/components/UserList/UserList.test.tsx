@@ -30,12 +30,12 @@ describe('UsersList', () => {
   it('should render the list properly', () => {
     const { getByTestId } = render(<UsersList data={mockUsers} />);
 
-    expect(getByTestId(`${TEST_IDS.LIST_USERS}`)).toBeTruthy();
+    expect(getByTestId(`${TEST_IDS.USERS_LIST}`)).toBeTruthy();
   });
 
   it('should set accessibilityRole "list" on the list of users', () => {
     const { getByTestId } = render(<UsersList data={mockUsers} />);
-    const flatList = getByTestId(TEST_IDS.LIST_USERS);
+    const flatList = getByTestId(TEST_IDS.USERS_LIST);
     expect(flatList.props.accessibilityRole).toBe(ACCESSIBILITY_ROLES.LIST);
   });
 

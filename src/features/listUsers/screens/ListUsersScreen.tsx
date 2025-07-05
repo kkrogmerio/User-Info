@@ -9,23 +9,23 @@ import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@shared/constants';
 import { useUsersQuery } from '@shared/hooks';
 import { RootStackParamList } from '@shared/types';
 
-import styles from './HomeScreen.styles';
+import { styles } from '.';
 import { MessageView } from '../components/MessageView';
 import { UsersList } from '../components/UserList';
 
-type HomeScreenNavigationProp = NativeStackScreenProps<
+type ListUsersScreenNavigationProps = NativeStackScreenProps<
   RootStackParamList,
-  SCREENS.Home
+  SCREENS.ListUsers
 >;
 
-const HomeScreen: React.FC<HomeScreenNavigationProp> = () => {
+const ListUsersScreen: React.FC<ListUsersScreenNavigationProps> = () => {
   const { data, isLoading, error } = useUsersQuery();
 
   if (isLoading) {
     return (
       <MessageView
         message={Strings.fetchDataStatus.loading}
-        testID={TEST_IDS.HOME_SCREEN.LOADING_MESSAGE}
+        testID={TEST_IDS.LIST_USERS.LOADING_MESSAGE}
       />
     );
   }
@@ -33,7 +33,7 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = () => {
     return (
       <MessageView
         message={Strings.fetchDataStatus.errorFetching}
-        testID={TEST_IDS.HOME_SCREEN.ERROR_MESSAGE}
+        testID={TEST_IDS.LIST_USERS.ERROR_MESSAGE}
       />
     );
   }
@@ -41,22 +41,22 @@ const HomeScreen: React.FC<HomeScreenNavigationProp> = () => {
     return (
       <MessageView
         message={Strings.noUsers}
-        testID={TEST_IDS.HOME_SCREEN.NO_USERS_MESSAGE}
+        testID={TEST_IDS.LIST_USERS.NO_USERS_MESSAGE}
       />
     );
   }
 
   return (
-    <View style={styles.screenView} testID={TEST_IDS.HOME_SCREEN.CONTAINER}>
+    <View style={styles.screenView} testID={TEST_IDS.LIST_USERS.CONTAINER}>
       <Text
         style={styles.title}
-        testID={TEST_IDS.HOME_SCREEN.TITLE}
+        testID={TEST_IDS.LIST_USERS.TITLE}
         accessibilityRole={ACCESSIBILITY_ROLES.HEADER}>
         {Strings.usersList}
       </Text>
-      <UsersList data={data} testID={TEST_IDS.LIST_USERS} />
+      <UsersList data={data} testID={TEST_IDS.USERS_LIST} />
     </View>
   );
 };
 
-export default HomeScreen;
+export default ListUsersScreen;

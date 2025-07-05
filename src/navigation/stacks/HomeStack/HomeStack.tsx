@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { HomeScreen } from '@features/home/screens';
+import { ListUsersScreen } from '@/features/listUsers/screens';
 import { UserDetailsScreen } from '@features/userDetails/screens';
 import {
   stackHeaderStyle,
@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => (
   <Stack.Navigator screenOptions={stackHeaderStyle}>
-    <Stack.Screen name={SCREENS.Home} component={HomeScreen} />
+    <Stack.Screen name={SCREENS.ListUsers} component={ListUsersScreen} />
     <Stack.Screen
       name={SCREENS.UserDetails}
       component={UserDetailsScreen}

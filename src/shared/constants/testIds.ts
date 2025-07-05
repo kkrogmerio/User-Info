@@ -10,15 +10,15 @@ export const TEST_IDS = {
     PHONE_VALUE: 'user-item-phone-value',
     ITEM: 'user-item',
   },
-  LIST_USERS: 'list_users',
-  HOME_SCREEN: {
-    CONTAINER: 'home-screen',
+  USERS_LIST: 'users-list',
+  LIST_USERS: {
+    CONTAINER: 'list-users-screen',
     TITLE: 'users-title',
     LOADING_MESSAGE: 'loading-message',
     ERROR_MESSAGE: 'error-message',
     NO_USERS_MESSAGE: 'no-users-message',
-    HOME_ICON: 'home-icon',
   },
+  HOME_TAB: { ICON: 'home-tab-icon' },
   USER_DETAILS_SCREEN: {
     CONTAINER: 'user-details-screen',
     USERNAME: 'user-details-username',
