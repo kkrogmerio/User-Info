@@ -1,2 +1,4 @@
 import { fetchUsers } from './fetchUsers';
-export { fetchUsers };
+import { queryClient } from './queryClient';
+
+export { fetchUsers, queryClient };
