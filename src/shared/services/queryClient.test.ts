@@ -40,10 +40,11 @@ describe('queryClient', () => {
 
   it('should persist query client with correct settings', () => {
     jest.resetModules();
-    const { queryClient } = require('./queryClient');
+    const { queryClient, enableQueryPersistence } = require('./queryClient');
     const {
       persistQueryClient,
     } = require('@tanstack/react-query-persist-client');
+    enableQueryPersistence();
     expect(persistQueryClient).toHaveBeenCalledWith(
       expect.objectContaining({
         queryClient,

@@ -19,8 +19,10 @@ const asyncStoragePersistor = createAsyncStoragePersister({
 });
 
 // Persist query client
-persistQueryClient({
-  queryClient,
-  persister: asyncStoragePersistor,
-  maxAge: Infinity,
-});
+export function enableQueryPersistence() {
+  persistQueryClient({
+    queryClient,
+    persister: asyncStoragePersistor,
+    maxAge: Infinity,
+  });
+}
