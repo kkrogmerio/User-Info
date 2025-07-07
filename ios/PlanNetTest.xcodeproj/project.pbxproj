@@ -11,10 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		5D0416FFF367048471E2193B /* libPods-PlanNetTest-PlanNetTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D52350C3EAE84D434CC0FC2F /* libPods-PlanNetTest-PlanNetTestTests.a */; };
 		6EC069CBC0843ABB4815A0F4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D11661F85C78B82A5CF1B944 /* PrivacyInfo.xcprivacy */; };
-		7629EC0AE5827932DAC28542 /* libPods-PlanNetTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B6E037072ECF607646449E7 /* libPods-PlanNetTest.a */; };
+		7BE6E3CB7C783222D481A340 /* libPods-PlanNetTest-PlanNetTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1D6548D6AE7A4B5E81D9F0 /* libPods-PlanNetTest-PlanNetTestTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		F8B26ADF84331EA3E1D5E49E /* libPods-PlanNetTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A50E1DC37B48E33E9BDD8E9 /* libPods-PlanNetTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +38,16 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PlanNetTest/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PlanNetTest/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = PlanNetTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		1E119AB06926843B3CA6D82E /* Pods-PlanNetTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest.release.xcconfig"; path = "Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest.release.xcconfig"; sourceTree = "<group>"; };
-		4B6E037072ECF607646449E7 /* libPods-PlanNetTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanNetTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B1D6548D6AE7A4B5E81D9F0 /* libPods-PlanNetTest-PlanNetTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanNetTest-PlanNetTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D297D52BEED76A00035905 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		67EBB1BBF5A8E01B7B9E311B /* Pods-PlanNetTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest.debug.xcconfig"; path = "Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest.debug.xcconfig"; sourceTree = "<group>"; };
+		557BBF1F153C3766910C35D3 /* Pods-PlanNetTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest.debug.xcconfig"; path = "Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest.debug.xcconfig"; sourceTree = "<group>"; };
+		7A50E1DC37B48E33E9BDD8E9 /* libPods-PlanNetTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanNetTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PlanNetTest/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B1FD0D3CB4BD24D88B7E0AD0 /* Pods-PlanNetTest-PlanNetTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest-PlanNetTestTests.release.xcconfig"; path = "Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		D0F28E7B2B0705B839F6F7C4 /* Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D11661F85C78B82A5CF1B944 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = PlanNetTest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		D52350C3EAE84D434CC0FC2F /* libPods-PlanNetTest-PlanNetTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanNetTest-PlanNetTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC180966FB821B76BEB7BCB1 /* Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EAE507771E298B5314890343 /* Pods-PlanNetTest-PlanNetTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest-PlanNetTestTests.release.xcconfig"; path = "Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FAFCDD18F77A91E07278682F /* Pods-PlanNetTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanNetTest.release.xcconfig"; path = "Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0416FFF367048471E2193B /* libPods-PlanNetTest-PlanNetTestTests.a in Frameworks */,
+				7BE6E3CB7C783222D481A340 /* libPods-PlanNetTest-PlanNetTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7629EC0AE5827932DAC28542 /* libPods-PlanNetTest.a in Frameworks */,
+				F8B26ADF84331EA3E1D5E49E /* libPods-PlanNetTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				4B6E037072ECF607646449E7 /* libPods-PlanNetTest.a */,
-				D52350C3EAE84D434CC0FC2F /* libPods-PlanNetTest-PlanNetTestTests.a */,
+				7A50E1DC37B48E33E9BDD8E9 /* libPods-PlanNetTest.a */,
+				2B1D6548D6AE7A4B5E81D9F0 /* libPods-PlanNetTest-PlanNetTestTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,10 +147,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				67EBB1BBF5A8E01B7B9E311B /* Pods-PlanNetTest.debug.xcconfig */,
-				1E119AB06926843B3CA6D82E /* Pods-PlanNetTest.release.xcconfig */,
-				EC180966FB821B76BEB7BCB1 /* Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig */,
-				B1FD0D3CB4BD24D88B7E0AD0 /* Pods-PlanNetTest-PlanNetTestTests.release.xcconfig */,
+				557BBF1F153C3766910C35D3 /* Pods-PlanNetTest.debug.xcconfig */,
+				FAFCDD18F77A91E07278682F /* Pods-PlanNetTest.release.xcconfig */,
+				D0F28E7B2B0705B839F6F7C4 /* Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig */,
+				EAE507771E298B5314890343 /* Pods-PlanNetTest-PlanNetTestTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -162,12 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PlanNetTestTests" */;
 			buildPhases = (
-				0DD5AC0B06CA237123ABAEC2 /* [CP] Check Pods Manifest.lock */,
+				04536F003BA3239949A472B5 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				651B300D8DEC1FB840819B8D /* [CP] Embed Pods Frameworks */,
-				2594D61CB9F6D9A492B01F79 /* [CP] Copy Pods Resources */,
+				28BE368141052909A59A16A7 /* [CP] Embed Pods Frameworks */,
+				2DB18C3D796501251AAD609F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,13 +183,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PlanNetTest" */;
 			buildPhases = (
-				9B24A917116033F11FAB49E4 /* [CP] Check Pods Manifest.lock */,
+				4797B7A8160DCE635254097C /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				4005B3A18FE353C4C81689AC /* [CP] Embed Pods Frameworks */,
-				30F56C43000D5A04DAE8440E /* [CP] Copy Pods Resources */,
+				D0C250802576F6CEE0A0BC3A /* [CP] Embed Pods Frameworks */,
+				BB1935AF09405099ED2C5367 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,7 +273,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0DD5AC0B06CA237123ABAEC2 /* [CP] Check Pods Manifest.lock */ = {
+		04536F003BA3239949A472B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,58 +295,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2594D61CB9F6D9A492B01F79 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		30F56C43000D5A04DAE8440E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4005B3A18FE353C4C81689AC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		651B300D8DEC1FB840819B8D /* [CP] Embed Pods Frameworks */ = {
+		28BE368141052909A59A16A7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,7 +312,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B24A917116033F11FAB49E4 /* [CP] Check Pods Manifest.lock */ = {
+		2DB18C3D796501251AAD609F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest-PlanNetTestTests/Pods-PlanNetTest-PlanNetTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4797B7A8160DCE635254097C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,6 +349,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB1935AF09405099ED2C5367 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C250802576F6CEE0A0BC3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanNetTest/Pods-PlanNetTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -418,7 +418,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC180966FB821B76BEB7BCB1 /* Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig */;
+			baseConfigurationReference = D0F28E7B2B0705B839F6F7C4 /* Pods-PlanNetTest-PlanNetTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -445,7 +445,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1FD0D3CB4BD24D88B7E0AD0 /* Pods-PlanNetTest-PlanNetTestTests.release.xcconfig */;
+			baseConfigurationReference = EAE507771E298B5314890343 /* Pods-PlanNetTest-PlanNetTestTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -469,7 +469,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67EBB1BBF5A8E01B7B9E311B /* Pods-PlanNetTest.debug.xcconfig */;
+			baseConfigurationReference = 557BBF1F153C3766910C35D3 /* Pods-PlanNetTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -496,7 +496,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E119AB06926843B3CA6D82E /* Pods-PlanNetTest.release.xcconfig */;
+			baseConfigurationReference = FAFCDD18F77A91E07278682F /* Pods-PlanNetTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
