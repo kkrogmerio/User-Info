@@ -5,8 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStackNavigator from '@/navigation/stacks/HomeStack';
 import SCREENS from '@navigation/screenNames';
 
-import { homeTabConfig, tabBarStyle } from '.';
-import { HomeTabIcon } from '.';
+import { homeTabConfig, tabBarStyle, HomeTabIcon } from '.';
 
 const Tab = createBottomTabNavigator();
 
