@@ -1,6 +1,9 @@
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
-import { Colors } from '@shared/constants';
+import { Colors, Strings } from '@shared/constants';
+export const listUsersScreenOptions: NativeStackNavigationOptions = {
+  title: Strings.tabLabels.listUsers,
+};
 export const stackHeaderStyle: NativeStackNavigationOptions = {
   headerStyle: {
     backgroundColor: Colors.primary,

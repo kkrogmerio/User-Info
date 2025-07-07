@@ -8,11 +8,16 @@ import SCREENS from '@navigation/screenNames';
 import { RootStackParamList } from '@shared/types';
 
 import { stackHeaderStyle, userDetailsScreenStyle } from '.';
+import { listUsersScreenOptions } from './HomeStack.style';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const HomeStackNavigator = () => (
   <Stack.Navigator screenOptions={stackHeaderStyle}>
-    <Stack.Screen name={SCREENS.ListUsers} component={ListUsersScreen} />
+    <Stack.Screen
+      name={SCREENS.ListUsers}
+      component={ListUsersScreen}
+      options={listUsersScreenOptions}
+    />
     <Stack.Screen
       name={SCREENS.UserDetails}
       component={UserDetailsScreen}

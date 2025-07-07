@@ -4,7 +4,7 @@ export default {
     errorNoMoreUsers: 'No more users!',
     loading: 'Loading...',
   },
-  tabLabels: { home: 'Home' },
+  tabLabels: { home: 'Home', listUsers: 'List users' },
   nextUser: 'Next user',
   usersList: 'My list of users',
   noUsers: 'No available users',
