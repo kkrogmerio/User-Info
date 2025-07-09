@@ -11,7 +11,6 @@ module.exports = {
     'node_modules/(?!(jest-)?@?react-native|@react-navigation|@tanstack/react-query|@react-native-community)',
   ],
   collectCoverageFrom: [
-    'App.test.tsx',
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.test.{js,jsx,ts,tsx}',
     '!src/**/*.spec.{js,jsx,ts,tsx}',

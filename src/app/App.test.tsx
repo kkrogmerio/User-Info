@@ -3,20 +3,21 @@ import React from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { render } from '@testing-library/react-native';
 
-import App from './App';
-import AppNavigator from './src/navigation/AppNavigator';
-import { queryClient } from './src/shared/services';
-import { enableQueryPersistence } from './src/shared/services/queryClient';
+import AppNavigator from '@navigation/AppNavigator';
+import { queryClient } from '@shared/services';
+import { enableQueryPersistence } from '@shared/services/queryClient';
 
-jest.mock('./src/navigation/AppNavigator', () => {
+import App from '.';
+
+jest.mock('@navigation/AppNavigator', () => {
   return jest.fn();
 });
 
-jest.mock('./src/shared/services', () => ({
+jest.mock('@shared/services', () => ({
   queryClient: {},
 }));
 
-jest.mock('./src/shared/services/queryClient', () => ({
+jest.mock('@shared/services/queryClient', () => ({
   enableQueryPersistence: jest.fn(),
 }));
 

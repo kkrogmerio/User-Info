@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 
-import AppNavigator from './src/navigation/AppNavigator';
-import { queryClient } from './src/shared/services';
-import { enableQueryPersistence } from './src/shared/services/queryClient';
+import { queryClient } from '@/shared/services';
+import AppNavigator from '@navigation/AppNavigator';
+import { enableQueryPersistence } from '@shared/services/queryClient';
 
 const App: React.FC = () => {
   useEffect(() => {
