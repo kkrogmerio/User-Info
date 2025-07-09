@@ -5,7 +5,7 @@ export const ITEM_HEIGHT = 120;
 export const ITEM_MARGIN_VERTICAL = 9;
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     borderRadius: 12,
     marginVertical: ITEM_MARGIN_VERTICAL,
     marginHorizontal: '2.5%',

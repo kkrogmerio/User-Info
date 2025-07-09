@@ -8,7 +8,7 @@ export const stackHeaderStyle: NativeStackNavigationOptions = {
   headerStyle: {
     backgroundColor: Colors.primary,
   },
-  headerTintColor: '#fff',
+  headerTintColor: Colors.white,
   headerTitleStyle: {
     fontWeight: 'bold',
   },
@@ -18,7 +18,7 @@ export const userDetailsScreenStyle: NativeStackNavigationOptions = {
   headerStyle: {
     backgroundColor: Colors.primary,
   },
-  headerTintColor: '#fff',
+  headerTintColor: Colors.white,
   headerTitleStyle: {
     fontWeight: 'bold',
   },

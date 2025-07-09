@@ -15,7 +15,7 @@ export const tabBarStyle: BottomTabNavigationOptions = {
     paddingTop: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     position: 'absolute',
     borderTopWidth: 0,
     shadowOpacity: 0.1,
