@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { QueryClientProvider } from '@tanstack/react-query';
 
@@ -7,7 +7,9 @@ import { queryClient } from './src/shared/services';
 import { enableQueryPersistence } from './src/shared/services/queryClient';
 
 const App: React.FC = () => {
-  enableQueryPersistence();
+  useEffect(() => {
+    enableQueryPersistence();
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <AppNavigator />
