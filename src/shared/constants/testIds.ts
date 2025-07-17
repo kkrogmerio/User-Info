@@ -25,4 +25,11 @@ export const TEST_IDS = {
     NEXT_USER_BUTTON: 'next-user-button',
     NEXT_USER_TEXT: 'next-user-text',
   },
+  ERROR_BOUNDARY: {
+    CONTAINER: 'error-boundary-container',
+    TITLE: 'error-boundary-title',
+    ERROR_MESSAGE: 'error-boundary-error-message',
+    RETRY_BUTTON: 'error-boundary-retry-button',
+    RETRY_BUTTON_TEXT: 'error-boundary-retry-button-text',
+  },
 } as const;

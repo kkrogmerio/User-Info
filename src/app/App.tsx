@@ -4,6 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 
 import { queryClient } from '@/shared/services';
 import AppNavigator from '@navigation/AppNavigator';
+import { ErrorBoundary } from '@shared/components';
 import { enableQueryPersistence } from '@shared/services/queryClient';
 
 const App: React.FC = () => {
@@ -11,9 +12,11 @@ const App: React.FC = () => {
     enableQueryPersistence();
   }, []);
   return (
-    <QueryClientProvider client={queryClient}>
-      <AppNavigator />
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <AppNavigator />
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 };
 

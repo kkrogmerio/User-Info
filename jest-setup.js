@@ -24,7 +24,8 @@ console.error = (...args) => {
       'Warning: An update to Animated(View) inside a test was not wrapped in act',
     ) ||
     message.includes('act(...)') ||
-    message.includes('Animated(View)')
+    message.includes('Animated(View)') ||
+    (message.includes('shouldThrow') && message.includes('ErrorBoundary'))
   ) {
     return;
   }

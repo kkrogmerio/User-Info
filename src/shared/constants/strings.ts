@@ -9,4 +9,9 @@ export default {
   usersList: 'My list of users',
   noUsers: 'No available users',
   user: { phone: 'Phone: ', email: 'Email: ', username: 'UserName: ' },
+  errorBoundary: {
+    title: 'Something went wrong',
+    message: 'Unknown Error',
+    retry: 'Try again',
+  },
 };

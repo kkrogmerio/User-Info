@@ -4,6 +4,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { render } from '@testing-library/react-native';
 
 import AppNavigator from '@navigation/AppNavigator';
+import { ErrorBoundary } from '@shared/components';
 import { queryClient } from '@shared/services';
 import { enableQueryPersistence } from '@shared/services/queryClient';
 
@@ -12,6 +13,10 @@ import App from '.';
 jest.mock('@navigation/AppNavigator', () => {
   return jest.fn();
 });
+
+jest.mock('@shared/components', () => ({
+  ErrorBoundary: jest.fn(({ children }) => <>{children}</>),
+}));
 
 jest.mock('@shared/services', () => ({
   queryClient: {},
@@ -33,6 +38,11 @@ describe('App Component', () => {
   it('should render AppNavigator component', () => {
     render(<App />);
     expect(AppNavigator).toHaveBeenCalledTimes(1);
+  });
+
+  it('should render ErrorBoundary component', () => {
+    render(<App />);
+    expect(ErrorBoundary).toHaveBeenCalledTimes(1);
   });
 
   it('should call enableQueryPersistence on mount', () => {
