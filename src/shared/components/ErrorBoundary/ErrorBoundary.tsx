@@ -21,15 +21,16 @@ class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
+  componentDidCatch() {
+    // TODO: Integrate crashlytics and send error and errorInfo
+  }
   resetError = () => {
     this.setState({ hasError: false, error: null });
   };
 
   render() {
     if (this.state.hasError) {
-      return (
-        <ErrorFallback error={this.state.error} resetError={this.resetError} />
-      );
+      return <ErrorFallback resetError={this.resetError} />;
     }
 
     return this.props.children;

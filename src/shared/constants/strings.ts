@@ -11,7 +11,8 @@ export default {
   user: { phone: 'Phone: ', email: 'Email: ', username: 'UserName: ' },
   errorBoundary: {
     title: 'Something went wrong',
-    message: 'Unknown Error',
+    message:
+      'An error occurred loading this screen. Please tap the button at the bottom of the page to try again, or contact support if the problem continues.',
     retry: 'Try again',
   },
 };

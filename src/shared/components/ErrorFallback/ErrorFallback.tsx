@@ -2,22 +2,15 @@ import React from 'react';
 
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import {
-  ACCESSIBILITY_HINTS,
-  ACCESSIBILITY_ROLES,
-  Strings,
-  TEST_IDS,
-} from '@shared/constants';
+import { ACCESSIBILITY_ROLES, Strings, TEST_IDS } from '@shared/constants';
 
 import { styles } from '.';
 
 interface Props {
-  error: Error | null;
   resetError: () => void;
 }
 
-const ErrorFallback: React.FC<Props> = ({ error, resetError }) => {
-  const errorMessage = error?.message || Strings.errorBoundary.message;
+const ErrorFallback: React.FC<Props> = ({ resetError }) => {
   return (
     <View
       testID={TEST_IDS.ERROR_BOUNDARY.CONTAINER}
@@ -33,14 +26,11 @@ const ErrorFallback: React.FC<Props> = ({ error, resetError }) => {
         testID={TEST_IDS.ERROR_BOUNDARY.ERROR_MESSAGE}
         accessibilityRole={ACCESSIBILITY_ROLES.TEXT}
         style={styles.error}>
-        {errorMessage}
+        {Strings.errorBoundary.message}
       </Text>
       <TouchableOpacity
         testID={TEST_IDS.ERROR_BOUNDARY.RETRY_BUTTON}
         accessibilityRole={ACCESSIBILITY_ROLES.BUTTON}
-        accessibilityHint={
-          ACCESSIBILITY_HINTS.REDIRECTED_TO_ERROR_BOUNDARY_PAGE
-        }
         style={styles.button}
         onPress={resetError}>
         <Text

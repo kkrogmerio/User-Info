@@ -11,27 +11,21 @@ const TEST_IDS = {
 };
 
 const MESSAGES = {
-  testError: 'Test error message',
   unknownError: 'Unknown error',
   normalContent: 'Normal content',
   tryAgain: 'Try Again',
 };
 
-// Mock the ErrorFallback component
 jest.mock('../ErrorFallback', () => {
   return function MockErrorFallback({
-    error,
     resetError,
   }: {
-    error: Error;
     resetError: () => void;
   }) {
     const { Text } = require('react-native');
     return (
       <>
-        <Text testID={TEST_IDS.ERROR_MESSAGE}>
-          {error?.message || MESSAGES.unknownError}
-        </Text>
+        <Text testID={TEST_IDS.ERROR_MESSAGE}>{MESSAGES.unknownError}</Text>
         <Text testID={TEST_IDS.RESET_BUTTON} onPress={resetError}>
           {MESSAGES.tryAgain}
         </Text>
@@ -43,7 +37,7 @@ jest.mock('../ErrorFallback', () => {
 // Component that throws an error for testing
 const ThrowError = ({ shouldThrow }: { shouldThrow: boolean }) => {
   if (shouldThrow) {
-    throw new Error(MESSAGES.testError);
+    throw new Error('Some error');
   }
   const { Text } = require('react-native');
   return <Text testID={TEST_IDS.NORMAL_CONTENT}>{MESSAGES.normalContent}</Text>;
@@ -54,42 +48,45 @@ describe('ErrorBoundary', () => {
     jest.clearAllMocks();
   });
 
-  it('should render children normally when no error occurs', () => {
+  it('should render children when no error occurs', () => {
     const { getByTestId, queryByTestId } = render(
       <ErrorBoundary>
         <ThrowError shouldThrow={false} />
       </ErrorBoundary>,
     );
-
     expect(getByTestId(TEST_IDS.NORMAL_CONTENT)).toBeTruthy();
     expect(queryByTestId(TEST_IDS.ERROR_MESSAGE)).toBeNull();
   });
 
-  it('should catch error and renders ErrorFallback component, then resets on retry', () => {
-    const renderTree = (shouldThrow: boolean) =>
-      render(
-        <ErrorBoundary>
-          <ThrowError shouldThrow={shouldThrow} />
-        </ErrorBoundary>,
-      );
-
-    // First render: throw error to trigger fallback
-    const { getByTestId, queryByTestId, unmount } = renderTree(true);
-
-    expect(getByTestId(TEST_IDS.ERROR_MESSAGE)).toBeTruthy();
+  it('should catch error and renders ErrorFallback', () => {
+    const { getByTestId, queryByTestId } = render(
+      <ErrorBoundary>
+        <ThrowError shouldThrow={true} />
+      </ErrorBoundary>,
+    );
     expect(getByTestId(TEST_IDS.ERROR_MESSAGE).props.children).toBe(
-      MESSAGES.testError,
+      MESSAGES.unknownError,
     );
     expect(queryByTestId(TEST_IDS.NORMAL_CONTENT)).toBeNull();
+  });
 
-    // Simulate "Try Again" (reset)
+  it('should reset error when Try Again is pressed', () => {
+    const { getByTestId, unmount } = render(
+      <ErrorBoundary>
+        <ThrowError shouldThrow={true} />
+      </ErrorBoundary>,
+    );
+    expect(getByTestId(TEST_IDS.ERROR_MESSAGE)).toBeTruthy();
+
     fireEvent.press(getByTestId(TEST_IDS.RESET_BUTTON));
 
-    // Unmount and remount with shouldThrow=false
+    // Unmount and mount again with shouldThrow = false
     unmount();
-    const { getByTestId: getByTestId2, queryByTestId: queryByTestId2 } =
-      renderTree(false);
-
+    const { getByTestId: getByTestId2, queryByTestId: queryByTestId2 } = render(
+      <ErrorBoundary>
+        <ThrowError shouldThrow={false} />
+      </ErrorBoundary>,
+    );
     expect(getByTestId2(TEST_IDS.NORMAL_CONTENT)).toBeTruthy();
     expect(queryByTestId2(TEST_IDS.ERROR_MESSAGE)).toBeNull();
   });
