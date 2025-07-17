@@ -4,7 +4,6 @@ import ErrorFallback from '../ErrorFallback';
 
 interface Props {
   children: ReactNode;
-  onError?: (error: Error, stackTrace: string) => void;
 }
 
 interface State {
